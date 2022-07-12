@@ -35,6 +35,21 @@ npm install hexo-generator-search --save
 ```
 3.同时将themes/singo/_source/的tags、categories和search文件夹拷贝到hexo根目录下的source文件夹下
 
+4.修改根目录下的_config.yml
+
+①修改theme为sinblog
+``` yml
+theme: sinblog
+```
+②在末尾添加：
+``` yml
+plugins: hexo-generate-feed
+
+search:
+  path: search.xml
+  field: post
+```
+
 ### 更新
 ``` bash
 cd themes/singo
