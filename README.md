@@ -16,3 +16,59 @@
 11.去掉网页鼠标指针
 
 ## 效果展示
+![主页](https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/images/msedge_wmU4dIlJjH.591jwk3e7zk0.webp)
+![主页+Chatra+和风天气](https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/images/msedge_yvUcsKcGpB.1tj45k0kcn9c.webp)
+![主页+心知天气](https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/images/msedge_1kdQdEPMdm.1hz08g118p4w.webp)
+![归档页+APlayer](https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/images/msedge_P051Qkvd2c.48w206dorua0.webp)
+![分类页](https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/images/msedge_XffYi8c6o2.3tozmmqph3o0.webp)
+![标签页](https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/images/msedge_6gYkIb2anS.395bt75ieou0.webp)
+
+## 使用教程
+1.安装主题
+``` bash
+ git clone https://github.com/StarWEB890/hexo-theme-singo themes/singo
+```
+2.安装插件
+``` bash
+npm install hexo-generator-feed --save
+npm install hexo-generator-search --save
+```
+3.同时将themes/singo/_source/的tags、categories和search文件夹拷贝到hexo根目录下的source文件夹下
+
+### 更新
+``` bash
+cd themes/singo
+git pull origin master
+``` 
+## 启用数学公式
+
+卸载`hexo-renderer-marked`，替换为`hexo-renderer-markdown-it-plus`
+
+``` bash
+npm un hexo-renderer-marked --save
+npm i hexo-renderer-markdown-it-plus --save
+```
+
+在需要启用数学公式的博客的head添加math: true
+
+编辑站点的配置文件
+
+``` yaml
+# hexo/_config.yml
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  quotes: “”‘’
+  pre_class: highlight
+```
+
+## 自定义代码高亮
+
+编辑`hexo-theme-shana\source\css_partial\highlight.styl`
+
+![](https://user-images.githubusercontent.com/20333903/28317264-c8a80a28-6bf8-11e7-88f9-f1ef542f5118.png)

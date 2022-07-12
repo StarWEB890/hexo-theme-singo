@@ -49,12 +49,6 @@ social:
 avatar: https://cravatar.cn/avatar/4193da6ee225ac3a05b7adddff9d9ce2?s=500
 
 # ===========================================================
-# footer
-# ===========================================================
-
-
-
-# ===========================================================
 # 网站统计
 # ===========================================================
 # 不蒜子
@@ -76,8 +70,8 @@ leancloud_visitors:
 waline: 
   enable: true # 是否启用 Waline 评论系统
   libUrl: https://unpkg.com/@waline/client/dist/waline.js # Waline 自定义JS
-  cssUrl: https://cdn.jsdelivr.net/gh/StarWEB890/TuChuang@master/waline.css # Waline 自定义CSS
-  server_url: 'https://wle.xsnetw.cf' #评论服务端地址
+  cssUrl:  # Waline 自定义CSS
+  server_url: '' #评论服务端地址
   pageSize: 10 # 评论数量多少时显示分页 
   emoji: [
     '//unpkg.com/@waline/emojis@1.0.1/weibo',
@@ -110,7 +104,7 @@ gitalk:
 # 本地搜索（必须安装hexo-generator-search，并将“_source”文件夹下的“search”复制到你的博客根目录下的“source”文件夹里面！）
 # ===========================================================
 local_search:
-	enable: true  #搜索开关
+	enable: false  #搜索开关
 	facade: ""  #搜索框样式
 
 # ===========================================================
@@ -119,8 +113,8 @@ local_search:
 # 申请请到：https://icp.gov.moe/join.php
 # 然后把号码粘贴到“code”页面即可（PS:“萌ICP备”不用加上去！）
 moeicp:
-  enable: true #开启 尾部“萌ICP备案”
-  code: 20210071 #你选的萌号
+  enable: false #开启 尾部“萌ICP备案”
+  code:  #你选的萌号
 
 # ===========================================================
 # 网页在线聊天
