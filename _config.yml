@@ -68,7 +68,7 @@ leancloud_visitors:
 # Waline评论
 # https://waline.js.org
 waline: 
-  enable: true # 是否启用 Waline 评论系统
+  enable: false # 是否启用 Waline 评论系统
   libUrl: https://unpkg.com/@waline/client/dist/waline.js # Waline 自定义JS
   cssUrl:  # Waline 自定义CSS
   server_url: '' #评论服务端地址
@@ -123,19 +123,19 @@ moeicp:
 # http://www.daovoice.io/
 daovoice:
   enable: false # 开启 DaoVoice 在线聊天系统
-  appid: fc15090b # DaoVoice AppID
+  appid:  # DaoVoice AppID
 
 # Chatra
 # https://chatra.com/cn/
 chatra:
-  enable: true #开启 Chatra 在线聊天系统
-  id: QP8pJHEonhoChjMN6 # Chatra AppID
+  enable: false #开启 Chatra 在线聊天系统
+  id:  # Chatra AppID
 
 # ===========================================================
 # 音乐播放器（使用APlayer）
 # ===========================================================
 music:
-  enable: true #开启音乐播放器
+  enable: false #开启音乐播放器
   server: netease  #音乐平台：netease(网易云音乐)，tencent(QQ音乐)，kugou(酷狗音乐)
   type: playlist  #歌曲类型song，playlist，album，search，artist
   id: 7515491376 #歌曲ID(song) /播放列表ID(playlist) /专辑ID(album) /搜索关键字(search) /歌手ID(artist)
@@ -152,12 +152,12 @@ music:
 # 和风天气
 # https://widget.qweather.com/
 qweather:
-  enable: true #开启和风天气
-  id: 12622c0ad18c4bf0b1080939c7bf26d0 #获取代码后直接复制key粘贴到这就行（切记只复制双引号里的内容）
+  enable: false #开启和风天气
+  id:  #获取代码后直接复制key粘贴到这就行（切记只复制双引号里的内容）
 
 # 心知天气
 # 获取代码：https://www.seniverse.com/widgetv3
 seniverse:
-  enable: true #开启心知天气
-  location: WX4FBXXFKE4F #获取代码后直接复制location粘贴到这
-  token: 4cb56d24-7322-4e0c-9792-4af10364cfdc #获取代码后直接复制token粘贴到这
+  enable: false #开启心知天气
+  location:  #获取代码后直接复制location粘贴到这
+  token:  #获取代码后直接复制token粘贴到这
