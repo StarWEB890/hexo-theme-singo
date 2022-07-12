@@ -28,8 +28,8 @@
 ``` bash
 # 普通线路
 git clone https://github.com/StarWEB890/hexo-theme-singo.git themes/singo
-# CloudFlare加速线路
-git clone https://git.poker/StarWEB890/hexo-theme-singo.git themes/singo
+# FastGit加速线路
+git clone https://hub.fastgit.xyz/StarWEB890/hexo-theme-singo.git themes/singo
 # github.91chi.fun加速线路
 git clone https://github.91chi.fun/https://github.com/StarWEB890/hexo-theme-singo.git themes/singo
 ```
