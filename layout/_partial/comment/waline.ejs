@@ -1,0 +1,13 @@
+<div id="comments" class="comments">
+    <div id="waline"></div>
+    <script>
+        Waline.init({
+          el: '#waline',
+          serverURL: '<%= theme.waline.server_url %>',
+        pageSize: '<%= theme.waline.pageSize %>',
+        placeholder: '<%= theme.waline.placeholder %>',
+        emoji: <%- JSON.stringify(theme.waline.emoji || []) %>,
+        login: '<%= theme.waline.login %>',
+        });
+      </script>
+  </div>

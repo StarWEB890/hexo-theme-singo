@@ -1,0 +1,17 @@
+<div id="comments" class="comments">
+  <div id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk@latest/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://priesttomb.github.io/js/md5.min.js"></script>
+  <script type="text/javascript">
+      new Gitalk({
+          clientID: '<%= theme.gitalk.ClientID %>',
+          clientSecret: '<%= theme.gitalk.ClientSecret %>',
+          repo: '<%= theme.gitalk.repo %>',
+          owner: '<%= theme.gitalk.owner %>',
+          admin: '<%= theme.gitalk.admin %>',
+          id: md5(location.pathname),
+          distractionFreeMode: '<%= theme.gitalk.distractionFreeMode %>'
+      }).render('gitalk-container')
+  </script>  
+  </div>

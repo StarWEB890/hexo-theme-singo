@@ -1,0 +1,40 @@
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script>
+
+ // 对所有链接跳转事件绑定pjax容器container
+
+ $(document).pjax('a[target!=_blank]', '#main', {fragment:'#main', timeout:8000})
+ $(document).on('pjax:complete', function() {
+    var search_path = "<%= config.search.path %>";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+        var path = "<%= config.root %>" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+})
+
+function pjax() {
+  /*因为下面的postdetails_js中的有个判断空指针的，如果加上就不能左移，如果去掉会报错，所以把这个放在首行来执行。*/
+  /*现在已经解决,可以放在任意的位置*/
+  /*
+      之前一直是好的突然有次就不好了，后来解决了右边sidebar滚轮效果消失的效果之后，突然又好了。
+      原因是因为，之前放在detail js的下面，而detail的下面undfind的判断时报错的，所以不会往下走。
+  */
+  /*判断#lv-container是否为空，目前这是我找到最好的办法，因为不判断，进入首页或其他的页面会空指针异常。*/
+  if ($("#lv-container").length > 0 ) {
+    $(".comments").css({opacity: 1});
+    $.getScript("https://cdn-city.livere.com/js/embed.dist.js");
+  }
+  //不蒜子js
+  $.getScript("https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+    //bootstap
+    $.getScript("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js");
+    //wow
+    $.getScript("//apps.bdimg.com/libs/wow/0.1.6/wow.min.js");
+ 
+
+}
+</script>

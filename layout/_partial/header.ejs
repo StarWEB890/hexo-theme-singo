@@ -1,0 +1,53 @@
+<header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav class="navbar navbar-expand-lg navbar-dark" id="main-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            <% for (var i in theme.menu){ %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %><a>
+            </li>
+            <% } %>
+            <% if (theme.qweather.enable){ %>
+            <div id="he-plugin-simple"></div>
+            <script>
+            WIDGET = {
+              "CONFIG": {
+                "modules": "01234",
+                "background": "5",
+                "tmpColor": "FFFFFF",
+                "tmpSize": "16",
+                "cityColor": "FFFFFF",
+                "citySize": "16",
+                "aqiColor": "FFFFFF",
+                "aqiSize": "16",
+                "weatherIconSize": "24",
+                "alertIconSize": "18",
+                "padding": "10px 10px 10px 10px",
+                "shadow": "0",
+                "language": "auto",
+                "fixed": "false",
+                "vertical": "top",
+                "horizontal": "left",
+                "key": "8d0f98bf97b5437d93ff5b4c76afe9ee"
+              }
+            }
+            </script>
+            <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+            <% } %>
+          </ul>
+        </div>
+      </nav>
+      <nav id="sub-nav">
+        <% if (theme.rss){ %>
+          <a id="nav-rss-link" class="nav-icon" href="<%- theme.rss %>" title="<%= __('rss_feed') %>"></a>
+        <% } %>
+        <a href="/search/" class="popup-trigger nav-icon" id="nav-search-btn"></a>
+      </nav>
+    </div>
+  </div>
+</header>

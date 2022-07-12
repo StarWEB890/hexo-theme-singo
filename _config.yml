@@ -1,0 +1,169 @@
+# ===========================================================
+# Header
+# ===========================================================
+menu:
+  首页: /
+  归档: /archives/ 
+  分类: /categories/ #需要将“_source”文件夹下的“categories”复制到你的博客根目录下的“source”文件夹里面！
+  标签: /tags/ #需要将“_source”文件夹下的“tags”复制到你的博客根目录下的“source”文件夹里面！
+  友链: /links/
+  关于: /about/
+  更新日志: /update/
+rss: /atom.xml
+
+# ===========================================================
+# Content
+# ===========================================================
+excerpt_link: 阅读全文
+fancybox: true
+
+# ===========================================================
+# Sidebar
+# ===========================================================
+sidebar: left
+
+# widget behavior
+archive_type: 'monthly'
+show_count: false
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+# 社交链接
+social:
+- url: http://github.com/StarWEB890
+  name: Github
+- url: http://space.bilibili.com/479627766
+  name: Bilibili
+
+
+# Sidebar Avatar
+# in theme directory(source/images): /images/avatar.jpg
+# in site  directory(source/uploads): /uploads/avatar.jpg
+# 头像
+avatar: https://cravatar.cn/avatar/4193da6ee225ac3a05b7adddff9d9ce2?s=500
+
+# ===========================================================
+# footer
+# ===========================================================
+
+
+
+# ===========================================================
+# 网站统计
+# ===========================================================
+# 不蒜子
+busuanzi: 
+  enable: true
+
+# leadcloud访问次数统计
+# 
+leancloud_visitors:
+  enable: false
+  app_id: 
+  app_key: 
+
+# ===========================================================
+# 评论功能
+# ===========================================================
+# Waline评论
+# https://waline.js.org
+waline: 
+  enable: true # 是否启用 Waline 评论系统
+  libUrl: https://unpkg.com/@waline/client/dist/waline.js # Waline 自定义JS
+  cssUrl: https://cdn.jsdelivr.net/gh/StarWEB890/TuChuang@master/waline.css # Waline 自定义CSS
+  server_url: 'https://wle.xsnetw.cf' #评论服务端地址
+  pageSize: 10 # 评论数量多少时显示分页 
+  emoji: [
+    '//unpkg.com/@waline/emojis@1.0.1/weibo',
+    '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+    'https://emoji.shojo.cn/bili/src/枕边童话',
+    'https://emoji.shojo.cn/bili/src/咩栗',
+    'https://emoji.shojo.cn/bili/src/呜米',
+    'https://emoji.shojo.cn/bili/src/多多poi',
+    'https://emoji.shojo.cn/bili/src/穆小泠',
+    'https://emoji.shojo.cn/bili/src/扶桑大红花',
+    'https://emoji.shojo.cn/bili/src/进击的冰糖',
+    'https://emoji.shojo.cn/bili/src/蕾尔娜Leona',
+  ] # Waline 表情包
+  login: force # 登录功能，可选：enable（开启登录功能）、disable（关闭登录功能）、force（强制登录）
+
+# Gitalk评论
+# https://gitalk.github.io/
+# 网上有教程，可以的话按照教程来配置
+gitalk:
+  enable: false # 是否启用 gitalk 评论系统
+  admin:  # 你的 GitHub 用户名
+  owner:  # Github 仓库管理者用户名
+  repo:  # GitHub 博客的仓库名称
+  ClientID:  # 你的ClientID
+  ClientSecret: # 你的Client Secret
+  labels: #你的issue标签
+  distractionFreeMode: true  #无干扰模式
+
+# ===========================================================
+# 本地搜索（必须安装hexo-generator-search，并将“_source”文件夹下的“search”复制到你的博客根目录下的“source”文件夹里面！）
+# ===========================================================
+local_search:
+	enable: true  #搜索开关
+	facade: ""  #搜索框样式
+
+# ===========================================================
+# 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
+# ===========================================================
+# 申请请到：https://icp.gov.moe/join.php
+# 然后把号码粘贴到“code”页面即可（PS:“萌ICP备”不用加上去！）
+moeicp:
+  enable: true #开启 尾部“萌ICP备案”
+  code: 20210071 #你选的萌号
+
+# ===========================================================
+# 网页在线聊天
+# ===========================================================
+# DaoVoice在线聊天系统
+# http://www.daovoice.io/
+daovoice:
+  enable: false # 开启 DaoVoice 在线聊天系统
+  appid: fc15090b # DaoVoice AppID
+
+# Chatra
+# https://chatra.com/cn/
+chatra:
+  enable: true #开启 Chatra 在线聊天系统
+  id: QP8pJHEonhoChjMN6 # Chatra AppID
+
+# ===========================================================
+# 音乐播放器（使用APlayer）
+# ===========================================================
+music:
+  enable: true #开启音乐播放器
+  server: netease  #音乐平台：netease(网易云音乐)，tencent(QQ音乐)，kugou(酷狗音乐)
+  type: playlist  #歌曲类型song，playlist，album，search，artist
+  id: 7515491376 #歌曲ID(song) /播放列表ID(playlist) /专辑ID(album) /搜索关键字(search) /歌手ID(artist)
+  fixed: true #吸低模式
+  autoplay: true #自动播放
+  loop: all #播放器循环播放，值：“all”，one”，“none”
+  order: random #播放器播放顺序，值：“list”，“random”
+  preload: auto #默认就行
+  listfolded: true #指示列表是否应该首先折叠
+
+# ===========================================================
+# 天气插件
+# ===========================================================
+# 和风天气
+# https://widget.qweather.com/
+qweather:
+  enable: true #开启和风天气
+  id: 12622c0ad18c4bf0b1080939c7bf26d0 #获取代码后直接复制key粘贴到这就行（切记只复制双引号里的内容）
+
+# 心知天气
+# 获取代码：https://www.seniverse.com/widgetv3
+seniverse:
+  enable: true #开启心知天气
+  location: WX4FBXXFKE4F #获取代码后直接复制location粘贴到这
+  token: 4cb56d24-7322-4e0c-9792-4af10364cfdc #获取代码后直接复制token粘贴到这
