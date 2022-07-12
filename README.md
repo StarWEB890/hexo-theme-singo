@@ -26,12 +26,22 @@
 ## 使用教程
 1.安装主题
 ``` bash
- git clone https://github.com/StarWEB890/hexo-theme-singo themes/singo
+# 普通线路
+git clone https://github.com/StarWEB890/hexo-theme-singo.git themes/singo
+# CloudFlare加速线路
+git clone https://git.poker/StarWEB890/hexo-theme-singo.git themes/singo
+# github.91chi.fun加速线路
+git clone https://github.91chi.fun/https://github.com/StarWEB890/hexo-theme-singo.git themes/singo
 ```
 2.安装插件
 ``` bash
+# 普通线路
 npm install hexo-generator-feed --save
 npm install hexo-generator-search --save
+# cnpm加速线路（需要安装cnpm）
+# 安装cnpm：npm install -g cnpm --registry=https://registry.npmmirror.com
+cnpm install hexo-generator-feed --save
+cnpm install hexo-generator-search --save
 ```
 3.同时将themes/singo/_source/的tags、categories和search文件夹拷贝到hexo根目录下的source文件夹下
 
@@ -57,19 +67,23 @@ git pull origin master
 ``` 
 ## 启用数学公式
 
-卸载`hexo-renderer-marked`，替换为`hexo-renderer-markdown-it-plus`
+1.卸载`hexo-renderer-marked`
 
 ``` bash
-npm un hexo-renderer-marked --save
-npm i hexo-renderer-markdown-it-plus --save
+npm uninstall hexo-renderer-marked --save
 ```
+2.安装`hexo-renderer-markdown-it-plus`
+``` bash
+# 普通线路
+npm install hexo-renderer-markdown-it-plus --save
+# cnpm加速线路（需要安装cnpm）
+cnpm install hexo-renderer-markdown-it-plus --save
+```
+3.在需要启用数学公式的博客的head添加math: true
 
-在需要启用数学公式的博客的head添加math: true
-
-编辑站点的配置文件
+4.编辑根目录下的_config.yml,在最后添加：
 
 ``` yaml
-# hexo/_config.yml
 markdown_it_plus:
   highlight: true
   html: true
