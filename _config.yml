@@ -6,9 +6,6 @@ menu:
   归档: /archives/ 
   分类: /categories/ #需要将“_source”文件夹下的“categories”复制到你的博客根目录下的“source”文件夹里面！
   标签: /tags/ #需要将“_source”文件夹下的“tags”复制到你的博客根目录下的“source”文件夹里面！
-  友链: /links/
-  关于: /about/
-  更新日志: /update/
 rss: /atom.xml
 
 # ===========================================================
