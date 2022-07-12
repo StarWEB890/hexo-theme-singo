@@ -47,9 +47,9 @@ cnpm install hexo-generator-search --save
 
 4.修改根目录下的_config.yml
 
-①修改theme为sinblog
+①修改theme为singo
 ``` yml
-theme: sinblog
+theme: singo
 ```
 ②在末尾添加：
 ``` yml
