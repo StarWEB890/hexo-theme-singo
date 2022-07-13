@@ -52,3 +52,7 @@
 <% if (!index && post.comments && theme.twikoo.enable){ %>
   <%- partial('comment/twikoo') %>
 <% } %>
+
+<% if (!index && post.comments && theme.valine.enable){ %>
+  <%- partial('comment/valine') %>
+<% } %>

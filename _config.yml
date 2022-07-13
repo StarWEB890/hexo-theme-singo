@@ -92,6 +92,15 @@ twikoo:
   region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
   lang: zh-CN #用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
 
+# Valine
+# https://valine.js.org/
+valine:
+  enable: false # 是否启用 Valine 评论系统
+  appid:  #Leancloud应用的appId
+  appkey:  #Leancloud应用的appKey
+  avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
+  placeholder: Just go go #评论框占位符
+
 # Gitalk评论
 # https://gitalk.github.io/
 # 网上有教程，可以的话按照教程来配置

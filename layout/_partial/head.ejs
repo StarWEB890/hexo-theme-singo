@@ -50,11 +50,6 @@
         searchFunc(path, 'local-search-input', 'local-search-result');
     </script>
 	<% if (theme.waline.enable) { %>
-		<% if (theme.waline.libUrl) { %>
-			<script src="<%= theme.waline.libUrl %>"></script>
-	<% }else{ %>
-		<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
-	<% } %>
 	<% if (theme.waline.cssUrl) { %>
 		<link rel="stylesheet" href="<%= theme.waline.cssUrl %>"></script>
 <% }else{ %>

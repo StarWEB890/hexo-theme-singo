@@ -1,0 +1,32 @@
+<div id="comments" class="comments">
+  <div id="vcomment" class="comment"></div> 
+  <script>
+  function load_valine() {
+      setTimeout(function() {
+          var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+          var src = 'https://unpkg.com/valine/dist/Valine.min.js'
+          var script = document.createElement('script')
+          script.setAttribute('type','text/javascript')
+          script.onload = function() {
+             pjax_valine()
+          }
+          script.setAttribute('src', src)
+          HEAD.appendChild(script)
+      }, 1);
+  };
+  function pjax_valine() {
+      if(!document.querySelectorAll(".comment")[0])return;
+      new Valine({
+              el: '.comment',
+              app_id: "<%= theme.valine.appid %>",
+              app_key: "<%= theme.valine.appkey %>",
+              placeholder: "<%= theme.valine.placeholder %>",
+              avatar:"<%= theme.valine.avatar %>"
+      });
+  }
+  load_valine();
+  document.addEventListener('pjax:complete', function () {
+      pjax_valine();
+  });
+  </script>
+  </div>
