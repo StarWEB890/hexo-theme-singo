@@ -48,3 +48,7 @@
 <% if (!index && post.comments && theme.waline.enable){ %>
   <%- partial('comment/waline') %>
 <% } %>
+
+<% if (!index && post.comments && theme.twikoo.enable){ %>
+  <%- partial('comment/twikoo') %>
+<% } %>

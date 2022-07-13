@@ -1,0 +1,13 @@
+<div id="comments" class="comments">
+  <div id="tcomment"></div>
+  <script src="https://cdn.staticfile.org/twikoo/1.5.11/twikoo.all.min.js"></script>
+  <script>
+  twikoo.init({
+    envId: '<%= theme.twikoo.envId %>', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+    el: '#tcomment', // 容器元素
+    region: '<%= theme.twikoo.region %>', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+    path: location.pathname, 
+    lang: '<%= theme.twikoo.lang %>',
+  })
+  </script>
+  </div>

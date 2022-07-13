@@ -101,3 +101,6 @@ markdown_it_plus:
 编辑`hexo-theme-shana\source\css_partial\highlight.styl`
 
 ![](https://user-images.githubusercontent.com/20333903/28317264-c8a80a28-6bf8-11e7-88f9-f1ef542f5118.png)
+
+## 更新日志
+[点我查看](https://github.com/StarWEB890/hexo-theme-singo/blob/master/UPDATE.md) or [加入Q群：623816093](https://jq.qq.com/?_wv=1027&k=moLMRjwC)
