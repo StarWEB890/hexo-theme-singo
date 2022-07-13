@@ -1,5 +1,6 @@
 # Hexo Theme SinGO
-[![OSCS Status](https://www.oscs1024.com/platform/badge/StarWEB890/hexo-theme-singo.svg?size=small)](https://www.oscs1024.com/project/StarWEB890/hexo-theme-singo?ref=badge_small)   [![MIT](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/StarWEB890/hexo-theme-singo/blob/master/LICENSE) 
+[![OSCS Status](https://www.oscs1024.com/platform/badge/StarWEB890/hexo-theme-singo.svg?size=small)](https://www.oscs1024.com/project/StarWEB890/hexo-theme-singo?ref=badge_small)   [![MIT](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/StarWEB890/hexo-theme-singo/blob/master/LICENSE)
+
 一款基于[hexo-theme-shana](https://github.com/ShanaMaid/hexo-theme-shana/)修改 ~~（重做）~~ 的主题
 ## 与hexo-theme-shana相比：
 1.由于原主题是原作者为庆贺夏娜酱2016年加冕萌王而制作的，而且animation也很多，低配手机在移动端访问的时候可能会出现卡顿，所以删去GalMenu和bganimation（如果想要的话我可以加回来）等内容，背景换成由[LoliAPI](https://www.loliapi.com/)提供的 随机调用二次元图片API
