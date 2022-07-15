@@ -152,7 +152,7 @@ music:
   enable: false #开启音乐播放器
   server: netease  #音乐平台：netease(网易云音乐)，tencent(QQ音乐)，kugou(酷狗音乐)
   type: playlist  #歌曲类型song，playlist，album，search，artist
-  id: 7515491376 #歌曲ID(song) /播放列表ID(playlist) /专辑ID(album) /搜索关键字(search) /歌手ID(artist)
+  id: 7515491376 #（当然可以用我默认的）歌曲ID(song) /播放列表ID(playlist) /专辑ID(album) /搜索关键字(search) /歌手ID(artist)
   fixed: true #吸低模式
   autoplay: true #自动播放
   loop: all #播放器循环播放，值：“all”，one”，“none”
