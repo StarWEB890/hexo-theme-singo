@@ -45,12 +45,17 @@ social:
 # 头像
 avatar: https://cravatar.cn/avatar/4193da6ee225ac3a05b7adddff9d9ce2?s=500
 
+# 侧边一言
+# 使用的是 https://hitokoto.cn/ 的一言API
+hitokoto: true
+
 # ===========================================================
 # 网站统计
 # ===========================================================
+
 # 不蒜子
-busuanzi: 
-  enable: true
+# https://busuanzi.ibruce.info
+busuanzi: false
 
 # leadcloud访问次数统计
 # 
