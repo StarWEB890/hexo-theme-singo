@@ -1,7 +1,5 @@
 <%- partial('_partial/head') %>
-<body style="background-image: url(https://www.loliapi.com/acg); 
-background-size: 100% ;
-background-attachment: fixed;" >
+<body>
   <div id="container">
     <div id="wrap">
       <%- partial('_partial/header') %>
@@ -17,6 +15,5 @@ background-attachment: fixed;" >
       <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
     </div>
     <%- partial('_partial/after-footer') %>
-  </div>
 </body>
 </html>
