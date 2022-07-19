@@ -1,0 +1,96 @@
+<section>
+    <% if (theme.gitalk.enable){ %>
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk@latest/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+        <script src="https://priesttomb.github.io/js/md5.min.js"></script>
+        <script type="text/javascript">
+            new Gitalk({
+                clientID: '<%= theme.gitalk.ClientID %>',
+                clientSecret: '<%= theme.gitalk.ClientSecret %>',
+                repo: '<%= theme.gitalk.repo %>',
+                owner: '<%= theme.gitalk.owner %>',
+                admin: '<%= theme.gitalk.admin %>',
+                id: md5(location.pathname),
+                distractionFreeMode: '<%= theme.gitalk.distractionFreeMode %>'
+            }).render('gitalk-container')
+        </script>  
+    <% } %>
+    <% if (theme.twikoo.enable){ %>
+        <div id="tcomment"></div>
+        <script>
+                function load_twikoo() {
+                setTimeout(function() {
+                    var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+                    var src = 'https://cdn.staticfile.org/twikoo/1.5.11/twikoo.all.min.js'
+                    var script = document.createElement('script')
+                    script.setAttribute('type','text/javascript')
+                    script.onload = function() {
+                       pjax_twikoo()
+                    }
+                    script.setAttribute('src', src)
+                    HEAD.appendChild(script)
+                }, 1);
+            };
+            function pjax_twikoo() {
+                if(!document.querySelectorAll("#tcomment")[0])return;
+                twikoo.init({
+                  envId: '<%= theme.twikoo.envId %>', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+          el: '#tcomment', // 容器元素
+          region: '<%= theme.twikoo.region %>', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+          path: location.pathname, 
+          lang: '<%= theme.twikoo.lang %>',
+                });
+            }
+            load_twikoo();
+            document.addEventListener('pjax:complete', function () {
+                pjax_twikoo();
+            });
+        </script>
+    <% } %>
+    <% if (theme.waline.enable){ %>
+    <div id="waline" class="waline"></div>
+    <script>
+      function load_waline() {
+          setTimeout(function() {
+              var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+              var src = 'https://unpkg.com/@waline/client/dist/waline.js'
+              var script = document.createElement('script')
+              script.setAttribute('type','text/javascript')
+              script.onload = function() {
+                 pjax_waline()
+              }
+              script.setAttribute('src', src)
+              HEAD.appendChild(script)
+          }, 1);
+      };
+      function pjax_waline() {
+          if(!document.querySelectorAll("#waline")[0])return;
+          Waline.init({
+                   el: '#waline',
+                   serverURL: '<%= theme.waline.server_url %>',
+                   pageSize: '<%= theme.waline.pageSize %>',
+                   placeholder: '<%= theme.waline.placeholder %>',
+                   emoji: <%- JSON.stringify(theme.waline.emoji || []) %>,
+                   login: '<%= theme.waline.login %>',
+          });
+      }
+      load_waline();
+      document.addEventListener('pjax:complete', function () {
+          pjax_waline();
+      });
+      </script>
+      <% } %>
+      <% if (theme.discuss.enable){ %>
+        <script src="https://cdn.jsdelivr.net/npm/discuss@1.0.4"></script>
+        <div id="Discuss-Comments"></div>
+        <script>
+          // 初始化
+          discuss.init({
+            el: '#Discuss-Comments',
+            serverURLs: '<%= theme.discuss.server_url %>',
+            lang: 'cn'
+          })
+        </script>
+        <% } %>
+</section>

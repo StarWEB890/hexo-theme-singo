@@ -1,78 +1,78 @@
-# ===========================================================
+# ===========================================================================================
 # Header
-# ===========================================================
+# ===========================================================================================
+
+# 搜索功能
+# Search
+search: 
+  enable: true
+  service: hexo # 选择搜索引擎（Select search engine）：google、hexo、algolia、azure、baidu
+  # google
+  google_api_key:
+  google_engine_id:
+  # algolia
+  algolia_app_id:
+  algolia_api_key:
+  algolia_index_name:
+  # azure
+  azure_service_name:
+  azure_index_name:
+  azure_query_key:
+  # baidu
+  baidu_api_id:
+
+# 头部导航菜单
+# navigation menu
+#（PS：后面必须要加斜杠才能保证Pjax运行！）
 menu:
-  首页: /
-  归档: /archives/ 
-  分类: /categories/ #需要将“_source”文件夹下的“categories”复制到你的博客根目录下的“source”文件夹里面！
-  标签: /tags/ #需要将“_source”文件夹下的“tags”复制到你的博客根目录下的“source”文件夹里面！
-rss: /atom.xml
+  Home: /
+  Archives: /archives/
+  About: /about/
 
-# ===========================================================
-# Content
-# ===========================================================
-excerpt_link: 阅读全文
-fancybox: true
-
-# ===========================================================
+# ===========================================================================================
 # Sidebar
-# ===========================================================
-sidebar: left
+# ===========================================================================================
 
-# widget behavior
-archive_type: 'monthly'
-show_count: false
-
-# Miscellaneous
-google_analytics:
-favicon: /favicon.png
-twitter:
-google_plus:
-fb_admins:
-fb_app_id:
+# 侧边导航菜单
+# widgets
+# 可选：about（关于）、links（社交链接）、categories（分类）、tagcloud（标签云）、qweather（和风天气）
+widgets:
+  - about
+  - links
+  - categories
+  - tagcloud
+  - qweather
 
 # 社交链接
+# Social Links
 social:
-- url: http://github.com/StarWEB890
-  name: Github
-- url: http://space.bilibili.com/479627766
-  name: Bilibili
+- name: Github
+  slug: fa fa-github
+  url: https://github.com/StarWEB890
+- name: RSS订阅
+  slug: fa fa-rss
+	url: /atom.xml
 
+# ===========================================================================================
+# Additional functions （附加功能)（机翻）
+# ===========================================================================================
 
-# Sidebar Avatar
-# in theme directory(source/images): /images/avatar.jpg
-# in site  directory(source/uploads): /uploads/avatar.jpg
-# 头像
-avatar: https://cravatar.cn/avatar/4193da6ee225ac3a05b7adddff9d9ce2?s=500
+# Less
+less:
+  compress: true
 
-# 侧边一言
-# 使用的是 https://hitokoto.cn/ 的一言API
-hitokoto: true
+# pjax
+pjax: true
 
-# ===========================================================
-# 网站统计
-# ===========================================================
-
-# 不蒜子
-# https://busuanzi.ibruce.info
-busuanzi: false
-
-# leadcloud访问次数统计
-# 
-leancloud_visitors:
-  enable: false
-  app_id: 
-  app_key: 
-
-# ===========================================================
+# Comments
 # 评论功能
-# ===========================================================
+
 # Waline评论
 # https://waline.js.org
 waline: 
-  enable: false # 是否启用 Waline 评论系统
-  libUrl: https://unpkg.com/@waline/client@v1/dist/Waline.min.js # Waline 自定义JS
-  cssUrl:  # Waline 自定义CSS
+  enable: false
+  libUrl: https://unpkg.com/@waline/client@v1/dist/Waline.min.js # Waline JS CDN
+  cssUrl: https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/waline.css # Waline CSS CDN（或自定义CSS）
   server_url: '' #评论服务端地址
   pageSize: 10 # 评论数量多少时显示分页 
   emoji: [
@@ -85,30 +85,29 @@ waline:
     'https://emoji.shojo.cn/bili/src/穆小泠',
     'https://emoji.shojo.cn/bili/src/扶桑大红花',
     'https://emoji.shojo.cn/bili/src/进击的冰糖',
+    'https://emoji.shojo.cn/bili/src/冰糖IO 蜕变·闪耀',
     'https://emoji.shojo.cn/bili/src/蕾尔娜Leona',
   ] # Waline 表情包
   login: force # 登录功能，可选：enable（开启登录功能）、disable（关闭登录功能）、force（强制登录）
 
-# Twikoo
-# https://twikoo.js.org/
+## Twikoo
+## https://twikoo.js.org/
+discuss:
+  enable: false # 是否启用 Twikoo 评论系统
+  server_url:  #评论服务端地址
+  lang: cn #用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
+
+## Twikoo
+## https://twikoo.js.org/
 twikoo:
   enable: false # 是否启用 Twikoo 评论系统
-  envId: # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+  envId:  # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
   region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
   lang: zh-CN #用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
 
-# Valine
-# https://valine.js.org/
-valine:
-  enable: false # 是否启用 Valine 评论系统
-  appid:  #Leancloud应用的appId
-  appkey:  #Leancloud应用的appKey
-  avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
-  placeholder: Just go go #评论框占位符
-
-# Gitalk评论
-# https://gitalk.github.io/
-# 网上有教程，可以的话按照教程来配置
+## Gitalk
+## https://gitalk.github.io/
+## 网上有教程，可以的话按照教程来配置
 gitalk:
   enable: false # 是否启用 gitalk 评论系统
   admin:  # 你的 GitHub 用户名
@@ -119,42 +118,17 @@ gitalk:
   labels: #你的issue标签
   distractionFreeMode: true  #无干扰模式
 
-# ===========================================================
-# 本地搜索（必须安装hexo-generator-search，并将“_source”文件夹下的“search”复制到你的博客根目录下的“source”文件夹里面！）
-# ===========================================================
-local_search:
-	enable: true  #搜索开关
-	facade: ""  #搜索框样式
-
-# ===========================================================
-# 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
-# ===========================================================
-# 申请请到：https://icp.gov.moe/join.php
-# 然后把号码粘贴到“code”页面即可（PS:“萌ICP备”不用加上去！）
+## 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
+## 申请请到：https://icp.gov.moe/join.php
+## 然后把号码粘贴到“code”页面即可（PS:“萌ICP备”不用加上去！）
 moeicp:
-  enable: false #开启 尾部“萌ICP备案”
-  code:  #你选的萌号
+  enable: false
+  code: 
 
-# ===========================================================
-# 网页在线聊天
-# ===========================================================
-# DaoVoice在线聊天系统
-# http://www.daovoice.io/
-daovoice:
-  enable: false # 开启 DaoVoice 在线聊天系统
-  appid:  # DaoVoice AppID
-
-# Chatra
-# https://chatra.com/cn/
-chatra:
-  enable: false #开启 Chatra 在线聊天系统
-  id:  # Chatra AppID
-
-# ===========================================================
-# 音乐播放器（使用APlayer）
-# ===========================================================
+## 音乐播放器
+## 使用APlayer+MetingJS
 music:
-  enable: false #开启音乐播放器
+  enable: true #开启音乐播放器
   server: netease  #音乐平台：netease(网易云音乐)，tencent(QQ音乐)，kugou(酷狗音乐)
   type: playlist  #歌曲类型song，playlist，album，search，artist
   id: 7515491376 #（当然可以用我默认的）歌曲ID(song) /播放列表ID(playlist) /专辑ID(album) /搜索关键字(search) /歌手ID(artist)
@@ -165,18 +139,15 @@ music:
   preload: auto #默认就行
   listfolded: true #指示列表是否应该首先折叠
 
-# ===========================================================
-# 天气插件
-# ===========================================================
-# 和风天气
-# https://widget.qweather.com/
-qweather:
-  enable: false #开启和风天气
-  id:  #获取代码后直接复制key粘贴到这就行（切记只复制双引号里的内容）
+## 不蒜子统计
+## https://busuanzi.ibruce.info
+busuanzi: true
 
-# 心知天气
-# 获取代码：https://www.seniverse.com/widgetv3
-seniverse:
-  enable: false #开启心知天气
-  location:  #获取代码后直接复制location粘贴到这
-  token:  #获取代码后直接复制token粘贴到这
+## canvas
+canvas: true
+
+# ===========================================================================================
+# CDN
+# ===========================================================================================
+# fontawesome cdn
+fontawesome: https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css

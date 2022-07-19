@@ -1,58 +1,51 @@
-<article id="<%= post.layout %>-<%= post.slug %>"  class="animated rubberBand article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-   
-  </div>
-  <div class="article-inner">
-    <%- partial('post/gallery') %>
-    <% if (post.link || post.title){ %>
-      <header class="article-header">
-        <%- partial('post/title', {class_name: 'article-title'}) %>
-        <div>
-          <%- partial('post/category', {class_name: 'article-title'}) %>
-          <% if (post.layout === "post"){ %>
-              <%- partial('post/view') %>
-          <% } %>
-        </div>
-      </header>
+<article id="<%= post.layout %>-<%= post.slug %>"
+  class="post white-box article-type-<%= post.layout %>"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="<%- url_for(post.path) %>">
+    	<%= post.title %>
+    </a>
+  </h2>
+	<time>
+	  <%= date(post.date, 'MMM D, YYYY') %>
+	</time>
+	<%- partial('categories',{post:post}) %>
+	</section>
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<%- post.content %>
+  	</div>
+	  <% if (post.tags && post.tags.length) { %>
+	  <div class="article-tags tags">
+      <% post.tags.each(function(item){ %>
+        <a href="<%- url_for(item.path) %>"><%=item.name %></a>
+      <%})%>
+	  </div>
     <% } %>
-    <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link){ %>
-          <p class="article-more-link">
-            <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-          </p>
-        <% } %>
-      <% } else { %>
-        <%- post.content %>
-      <% } %>
-    </div>
-    <footer class="article-footer">
-      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
-      <% if (post.comments && config.disqus_shortname){ %>
-        <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
-      <% } %>
-      <%- partial('post/tag') %>
-    </footer>
-  </div>
-  <% if (!index){ %>
-    <%- partial('post/nav') %>
-  <% } %>
+		
+	<% if(post.prev || post.next){ %>
+		<div class="art-item-footer">
+				<% if(post.prev){ %>
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i><%= __('Post.Previous') %>：<a href="<%=url_for(post.prev.path)%>" rel="prev"  title="<%=post.prev.title%>">
+						<%= post.prev.title %> 
+					</a></span>
+				<% } %>
+				<% if(post.next){ %>
+					<span class="art-item-right"><%= __('Post.Next') %>：<a href="<%=url_for(post.next.path) %>" rel="next"  title="<%=post.next.title %>">
+						<%=post.next.title  %>
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				<%} %>
+		</div>
+	<%} %>
+	</section>
+	<% if (post.comments){ %>
+        <%- partial('comments') %>
+	<% } %>
 </article>
-
-<% if (!index && post.comments && theme.gitalk.enable){ %>
-  <%- partial('comment/gitalk') %>
-<% } %>
-
-<% if (!index && post.comments && theme.waline.enable){ %>
-  <%- partial('comment/waline') %>
-<% } %>
-
-<% if (!index && post.comments && theme.twikoo.enable){ %>
-  <%- partial('comment/twikoo') %>
-<% } %>
-
-<% if (!index && post.comments && theme.valine.enable){ %>
-  <%- partial('comment/valine') %>
-<% } %>
+<script>
+	window.subData = {
+		title: '<%= post.title %>',
+		tools: true
+	}
+</script>

@@ -1,33 +1,38 @@
-<% if (pagination == 2){ %>
-  <% page.posts.each(function(post){ %>
-    <%- partial('article', {post: post, index: true}) %>
-  <% }) %>
-<% } else { %>
-  <% var last; %>
-  <% page.posts.each(function(post, i){ %>
-    <% var year = post.date.year(); %>
-    <% if (last != year){ %>
-      <% if (last != null){ %>
-        </div></section>
-      <% } %>
-      <% last = year; %>
-      <section class="archives-wrap animated rubberBand">
-        <div class="archive-year-wrap">
-          <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
-        </div>
-        <div class="archives">
-    <% } %>
-    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
-  <% }) %>
-  <% if (page.posts.length){ %>
-    </div></section>
-  <% } %>
+<% if (is_tag()) { %>
+  <script>
+    window.subData= { title:'Tag : <%= page.tag %>'}
+  </script>
+<% } else if (is_archive()) { %>
+  <script>
+    window.subData= { title:'Year : <%= page.year %><%= page.month ? '.' + page.month : '' %>'}
+  </script>
+<% } else if (is_category()) { %>
+  <script>
+    window.subData= { title:'Category : <%= page.category %>'}
+  </script>
 <% } %>
-<% if (page.total > 1){ %>
+<section class="post-list">
+	<% page.posts.each(function(post){ %>
+    <div class='post-wrapper'>
+      <%- partial('post', {post: post}) %>
+    </div>
+  <% }) %>
+</section>
+
+<% if (page.total > 1) { %>
   <nav id="page-nav">
-    <%- paginator({
-      prev_text: "&laquo; pre",
-      next_text: "next &raquo;"
-    }) %>
+    <% if (page.prev != 0) { %>
+    <a class="prev" rel="prev" href="<%= url_for(page.prev_link) %>">
+      <span class="icon icon-chevron-left"></span>
+      <span class="text"><%= __('Archive.Previous') %></span>
+    </a>
+    <% } %>
+    <% if (page.next != 0) { %>
+    <a class="next" rel="next" href="<%= url_for(page.next_link) %>">
+      <span class="text"><%= __('Archive.Next') %></span>
+      <span class="icon icon-chevron-right"></span>
+    </a>
+    <% } %>
   </nav>
+  
 <% } %>

@@ -1,19 +1,23 @@
 <%- partial('_partial/head') %>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <%- partial('_partial/header') %>
-      <%- partial('_more/pjax') %>
-      <div class="outer">
-        <section id="main">
-          <%- body %>
-        </section>
-        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
-          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-        <% } %>
+  <%- partial('_partial/loading') %>
+  <script>setLoadingBarProgress(20)</script> 
+  <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div id="pjax-container" class='l_main'>
+        <%- body %>
       </div>
-      <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+      <aside class='l_side'>
+        <%- partial('_partial/side') %>
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
     </div>
-    <%- partial('_partial/after-footer') %>
+  </div>
+  <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+  <script>setLoadingBarProgress(80);</script>
+  <%- partial('_partial/scripts') %>
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>
