@@ -16,13 +16,6 @@
         searchFunc(path, 'local-search-input', 'local-search-result');
 })
 
-$(document).on('pjax:send', function() { 
-    $(".plane").css("display", "block");//pjax链接点击后显示加载动画；
-});
-$(document).on('pjax:complete', function() { 
-    $(".plane").css("display", "none");//pjax链接加载完成后隐藏加载动画；
-});
-
 function pjax() {
   /*因为下面的postdetails_js中的有个判断空指针的，如果加上就不能左移，如果去掉会报错，所以把这个放在首行来执行。*/
   /*现在已经解决,可以放在任意的位置*/
@@ -39,8 +32,6 @@ function pjax() {
   $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
     //bootstap
     $.getScript("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js");
-    //wow
-    $.getScript("//apps.bdimg.com/libs/wow/0.1.6/wow.min.js");
  
 
 }

@@ -9,13 +9,14 @@
 
 2.由于原先的主题没有pjax，所以我添加了pjax
 
-~~我现在怀疑我不是修改这个主题，而是把整个主题推翻重做了。。。。~~
-
 3.保留了之前SinGO主题的风格
 
-4.添加Waline、Gitalk、Twikoo、[Discuss](https://discuss.js.org/)评论
+4.添加~~Waline~~、Gitalk、Twikoo、[Discuss](https://discuss.js.org/)评论
+``` bash
+2022-07-20：由于Waline手机访问有BUG，所以将其去掉，如果有解决方法，欢迎跟我PR！
+```
 
-~~5.添加网页在线聊天系统~~（即将回归）
+5.添加网页在线聊天系统
 
 6.添加不蒜子计数器
 

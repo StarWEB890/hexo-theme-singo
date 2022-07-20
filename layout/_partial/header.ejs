@@ -6,20 +6,19 @@
 			</a>
 			<div class='menu'>
 				<ul class='h-list'>
-					<% for (name in theme.menu) { %>
-						<li style="margin: 0 10px 0 0px;">
-							<a class='flat-box nav-<%= name %>' href='<%- url_for(theme.menu[name]) %>'>
-								<%- __(name) %>
+					<% (theme.menu||[]).forEach(function(value){ %>
+						<li>
+							<a class='flat-box nav-<%=value.slug%>' href='<%=url_for(value.url)%>'>
+								<%=value.name%>
 							</a>
 						</li>
-					<% } %>
+					<%})%>
 				</ul>
-				<div class='underline'></div>
 			</div>
 			<% if (theme.search.enable === true) { %>
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="<%= __('Search') %>" />
+						<input type="text" class="input u-search-input" placeholder="Search" />
 						<span class="icon icon-search"></span>
 					</form>
 				</div>
@@ -32,14 +31,22 @@
 			</ul>
 		</div>
 		
+		<div class='nav-sub container container--flex'>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
 	</div>
 </header>
 <aside class="menu-phone">
 	<nav>
-		<% for (name in theme.menu) { %>
-			<a href="<%- url_for(theme.menu[name]) %>" class="nav-<%= name %> nav">
-				<%- __(name) %>
+		<% (theme.menu||[]).forEach(function(value, key) {
+					if (value.url && value.slug && value.name) { %>
+			<a href="<%= url_for(value.url) %>" class="nav-<%= value.slug %> nav">
+				<%= value.name %>
 			</a>
-		<% } %>
+		<% } }); %>
 	</nav>
 </aside>

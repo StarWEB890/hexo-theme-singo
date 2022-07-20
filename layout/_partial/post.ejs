@@ -1,4 +1,10 @@
-<article class="post reveal<%= (post.title) ? "" : "no-title" %>">
+<article class="post reveal<%= (post.title) ? "" : "no-title" %>" style="visibility: visible;
+  -webkit-transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
+  transition: transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;">
   <section class="meta">
     <% if (post.title) { %>
     <h2 class="title">

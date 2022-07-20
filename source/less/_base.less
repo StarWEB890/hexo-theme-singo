@@ -26,8 +26,6 @@ html {
 
 body {
     overflow-x: hidden;
-    width:100%;
-    height: 100%;
     background-image: url(https://www.loliapi.com/acg/);
     background-repeat: no-repeat;
     background-attachment:fixed;
@@ -49,35 +47,6 @@ body {
     }
 }
 
-loader{
-    top: 2em;
-    right: 2em;
-    z-index: 3;
-    opacity: 0;
-    position: fixed;
-    pointer-events: none;
-    transition: opacity .3s;
-.active{ opacity: 1 }
-
-.plane{
-    width: 2em;
-    height: 2em;
-    background: #0b63ff;
-    animation: loader 1.2s infinite ease-in-out
-}
-}
-
-@keyframes loader {
-    0% {
-        transform: perspective(120px) rotateX(0deg) rotateY(0deg)
-    }
-    50% {
-        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-    }
-    100% {
-        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
-    }
-}
 // //reset ::-webkit-scrollbar
 
 // /* Let's get this party started */
@@ -371,5 +340,5 @@ ul.h-list {
 }
 
 .reveal {
-    //visibility: hidden;
+    visibility: hidden;
 }
