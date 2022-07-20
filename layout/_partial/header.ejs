@@ -8,8 +8,8 @@
 				<ul class='h-list'>
 					<% (theme.menu||[]).forEach(function(value){ %>
 						<li>
-							<a class='flat-box nav-<%=value.slug%>' href='<%=url_for(value.url)%>'>
-								<%=value.name%>
+							<a class='flat-box nav' href='<%=url_for(value.url)%>'>
+								<i class="<%=value.slug%>" aria-hidden="true"></i>&nbsp;<%=value.name%>
 							</a>
 						</li>
 					<%})%>

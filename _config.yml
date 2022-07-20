@@ -27,9 +27,6 @@ menu:
   - name: 归档
     slug: archives
     url: /archives
-  - name: 关于
-    slug: about
-    url: /about
 
 # ========================================================================================
 # Sidebar
@@ -61,9 +58,10 @@ social:
 
 # Discuss
 # https://discuss.js.org/
+# （自定义表情请在主题目录下“layout/_thirdparty/emoji.ejs”添加方式请看：https://discuss.js.org/Quick-Start.html#emotmaps）
 discuss:
   enable: false # 是否启用 discuss 评论系统
-  server_url: https://sin-go-discuss.vercel.app #评论服务端地址
+  server_url:  #评论服务端地址
   lang: cn #用于手动设定评论区语言，支持的语言列表 https://discuss.js.org/Quick-Start.html#lang
   ph: 有话想说？ #原名placeholder，评论框占位符，可自定义，默认值与lang有关系
 
@@ -71,7 +69,7 @@ discuss:
 # https://twikoo.js.org/
 twikoo:
   enable: true # 是否启用 Twikoo 评论系统
-  envId: https://sin-go-twikoo.vercel.app/ # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+  envId:  # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
   region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
   lang: zh-CN #用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
 
@@ -92,8 +90,8 @@ gitalk:
 ## 申请请到：https://icp.gov.moe/join.php
 ## 然后把号码粘贴到“code”页面即可（PS:“萌ICP备”不用加上去！）
 moeicp:
-  enable: true
-  code: 20210071
+  enable: false
+  code: 
 
 ## 音乐播放器
 ## 使用APlayer+MetingJS
@@ -127,13 +125,13 @@ pjax: true
 
 #Chatra
 chatra: 
-  enable: true
-  public_key: QP8pJHEonhoChjMN6 #直接复制Public key到此就行
+  enable: false
+  public_key:  #直接复制Public key到此就行
 
 #Daovoice
 daovoice: 
   enable: false
-  app_id: fc15090b #直接复制app_id到此就行
+  app_id:  #直接复制app_id到此就行
 
 # ========================================================================================
 # CDN选择
