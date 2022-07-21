@@ -59,6 +59,8 @@ theme: singo
 ```
 ②在末尾添加：
 ``` yml
+avatar: /images/avatar.jpg #你的头像，可自定义
+
 plugins: hexo-generate-feed
 
 search:

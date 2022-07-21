@@ -1,4 +1,4 @@
-<section style="margin:15px 0 0 0;padding:11px;background-color:rgba(255, 255, 255, 0.85);">
+<section class="animated rubberBand slideInRight " style="margin:15px 0 0 0;padding:11px;background-color:rgba(255, 255, 255, 0.85);border-radius: 20px;">
     <% if (theme.gitalk.enable){ %>
         <div id="gitalk-container"></div>
         <link rel="stylesheet" href="https://unpkg.com/gitalk@latest/dist/gitalk.css">
@@ -49,17 +49,35 @@
         </script>
     <% } %>
       <% if (theme.discuss.enable){ %>
-        <script src="https://cdn.jsdelivr.net/npm/discuss@latest/dist/discuss.js"></script>
         <div id="Discuss-Comments"></div>
         <script>
-          // 初始化
-          discuss.init({
-            el: '#Discuss-Comments',
-            serverURLs: '<%= theme.discuss.server_url %>',
-            lang: '<%= theme.discuss.lang %>',
-            ph: '<%= theme.discuss.ph %>',
-            emotMaps: <%- partial('_thirdparty/emoji') %>,
-          })
+function load_discuss() {
+    setTimeout(function() {
+        var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+        var src = 'https://cdn.jsdelivr.net/npm/discuss@latest/dist/discuss.js'
+        var script = document.createElement('script')
+        script.setAttribute('type','text/javascript')
+        script.onload = function() {
+           pjax_discuss()
+        }
+        script.setAttribute('src', src)
+        HEAD.appendChild(script)
+    }, 1);
+};
+function pjax_discuss() {
+    if(!document.querySelectorAll("#Discuss-Comments")[0])return;
+    discuss.init({
+        el: '#Discuss-Comments',
+        serverURLs: '<%= theme.discuss.server_url %>',
+        lang: '<%= theme.discuss.lang %>',
+        ph: '<%= theme.discuss.ph %>',
+        emotMaps: <%- partial('_thirdparty/emoji') %>,
+      });
+}
+load_discuss();
+document.addEventListener('pjax:complete', function () {
+    pjax_discuss();
+});
         </script>
         <% } %>
 </section>

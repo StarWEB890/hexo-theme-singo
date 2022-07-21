@@ -18,9 +18,7 @@
     }
     img {
         position: relative;
-        display: block;
         margin: 0 auto;
-        background: white;
         transition: all 0.24s ease;
         @media (max-width: @on-phone) {
             box-shadow: none;
@@ -135,16 +133,17 @@
     }
     .tags {
         position: relative;
-        padding-top: @gap/2;
-        padding-bottom: @gap/2;
+        padding-top: 10px;
+        padding-bottom: 10px;
         font-size: 1rem;
         line-height: 1.5rem;
         margin-top: @gap;
+        border-radius: 0 0 @gap @gap;
         background-color: rgba(255,255,255,0.4);
         &.article-tags {
             background: transparent;
         }
-        word-spacing: @gap/2;
+        word-spacing: 10px;
         a {
             position: relative;
             display: inline-block;

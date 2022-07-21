@@ -19,13 +19,13 @@ search:
   # baidu
   baidu_api_id:
 
-# 顶部菜单
+# 顶部菜单（slug请在fontawesome选择）
 menu:
   - name: 主页
-    slug: home
+    slug: fa fa-home
     url: /
   - name: 归档
-    slug: archives
+    slug: fa fa-archive
     url: /archives
 
 # ========================================================================================
@@ -40,8 +40,22 @@ widgets:
   - categories
   - tagcloud
   - qweather
+  - music
 
-# 侧边栏社交链接
+## 侧边音乐播放器
+## 使用APlayer+MetingJS
+music:
+  server: netease  #音乐平台：netease(网易云音乐)，tencent(QQ音乐)，kugou(酷狗音乐)
+  type: playlist  #歌曲类型song，playlist，album，search，artist
+  id: 7515491376 #（当然可以用我默认的）歌曲ID(song) /播放列表ID(playlist) /专辑ID(album) /搜索关键字(search) /歌手ID(artist)
+  fixed: true #吸低模式
+  autoplay: true #自动播放
+  loop: all #播放器循环播放，值：“all”，one”，“none”
+  order: random #播放器播放顺序，值：“list”，“random”
+  preload: auto #默认就行
+  listfolded: true #指示列表是否应该首先折叠
+
+# 侧边栏社交链接（slug请在fontawesome选择）
 social:
 - name: github
   slug: fa fa-github
@@ -92,20 +106,6 @@ gitalk:
 moeicp:
   enable: false
   code: 
-
-## 音乐播放器
-## 使用APlayer+MetingJS
-music:
-  enable: true #开启音乐播放器
-  server: netease  #音乐平台：netease(网易云音乐)，tencent(QQ音乐)，kugou(酷狗音乐)
-  type: playlist  #歌曲类型song，playlist，album，search，artist
-  id: 7515491376 #（当然可以用我默认的）歌曲ID(song) /播放列表ID(playlist) /专辑ID(album) /搜索关键字(search) /歌手ID(artist)
-  fixed: true #吸低模式
-  autoplay: true #自动播放
-  loop: all #播放器循环播放，值：“all”，one”，“none”
-  order: random #播放器播放顺序，值：“list”，“random”
-  preload: auto #默认就行
-  listfolded: true #指示列表是否应该首先折叠
 
 ## 不蒜子统计
 ## https://busuanzi.ibruce.info

@@ -2,12 +2,12 @@
     &:extend(.z-depth-1);
     background-color: rgba(255,255,255,0.8);
     margin-bottom: @gap;
+    border-radius: 10px;
     // .header,.content{
     //     padding: 0 @gap;
     // }
     .header{
-        &:before{
-            content: '#';
+        .fa{
             margin-left: -10px;
             margin-right: 10px;
             color: @secondary-color;
@@ -59,14 +59,16 @@
             .enable-trans(.15s);
             line-height: 1.2em;
             font-style: italic;
+            border-radius: @gap;
             &:before{
                 content:'';
                 position: absolute;
                 left:0;
                 top:0;
                 width:2px;
-                height:100%;
+                height:50%;
                 background:@secondary-color;
+                margin: 21px 0px 0 0.5px;
             }
             &:empty{
                 padding:0;
@@ -89,3 +91,4 @@
         }
     }
 }
+.s-sticker{border-radius: 0px 0px 10px 10px;}
