@@ -6,7 +6,12 @@
 	server="<%= theme.music.server %>" 
 	type="<%= theme.music.type %>" 
 	id="<%= theme.music.id %>"
+	<% if (theme.music.mini){ %>
+	mini="<%= theme.music.mini %>"
+	<% } %>
+	<% if (theme.music.fixed){ %>
 	fixed="<%= theme.music.fixed %>" 
+	<% } %>
 	autoplay="<%= theme.music.autoplay %>"
 	loop="<%= theme.music.loop %>"
 	order="<%= theme.music.order %>"
