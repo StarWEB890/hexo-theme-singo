@@ -1,0 +1,140 @@
+<article id="<%= page.layout %>-<%= page.slug %>"
+   class="animated rubberBand slideInRight post white-box article-type-<%= page.layout %>"
+   itemscope itemprop="blogpage">
+    <section class='meta'>
+    <h2 class="title">
+      <a href="<%- url_for(page.path) %>">
+        <%= page.title %>
+     </a>
+   </h2>
+    </section>
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+<div class="post-body">
+    <div id="links">
+       <style>
+          .links-content{
+          margin-top:1rem;
+          }
+          .link-navigation::after {
+          content: " ";
+          display: block;
+          clear: both;
+          }
+          .card {
+          width: 45%;
+          font-size: 1rem;
+          padding: 10px 20px;
+          border-radius: 4px;
+          transition-duration: 0.15s;
+          margin-bottom: 1rem;
+          display:flex;
+          }
+          .card:nth-child(odd) {
+          float: right;
+          }
+          .card:nth-child(even) {
+          float: left;
+          }
+          .card:hover {
+          transform: scale(1.1);
+          box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+          }
+          .card a {
+          border:none;
+          }
+          .card .ava {
+          width: 3rem!important;
+          height: 3rem!important;
+          margin:0!important;
+          margin-right: 1em!important;
+          border-radius:4px;
+          }
+          .card .card-header {
+          font-style: italic;
+          overflow: hidden;
+          width: 100%;
+          }
+          .card .card-header a {
+          font-style: normal;
+          color: #2bbc8a;
+          font-weight: bold;
+          text-decoration: none;
+          }
+          .card .card-header a:hover {
+          color: #d480aa;
+          text-decoration: none;
+          }
+          .card .card-header .info {
+          font-style:normal;
+          color:#a3a3a3;
+          font-size:14px;
+          min-width: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          }
+       </style>
+       <div class="links-content">
+          <div class="link-navigation">
+            <h3>大佬们</h3>
+            <% (theme.links||[]).forEach(function(link){ %>
+             <div class="card">
+                <img class="ava" src="<%=link.avatar%>" />
+                <div class="card-header">
+                   <div>
+                      <a href="<%=url_for(link.link)%>"><%=link.name%></a>
+                   </div>
+                   <div class="info"><%=link.info%></div>
+                </div>
+             </div>
+            <%})%>
+          </div>
+       </div>
+    </div>
+    <p>欢迎跟我添加友链！</p>
+<pre style="overflow-x: hidden;"><code>友链格式：
+- name: <%= config.title%>
+  site: <%= config.url%>
+  info: <%= config.description%>
+  avatar: <%= url_for(theme.linkavatar) %>
+</code></pre>
+ </div>
+   	</div>
+	  <% if (page.tags && page.tags.length) { %>
+	  <div class="article-tags tags">
+      <% page.tags.each(function(item){ %>
+        <a href="<%- url_for(item.path) %>"><%=item.name %></a>
+      <%})%>
+	  </div>
+    <% } %>
+		
+	<% if(page.prev || page.next){ %>
+		<div class="art-item-footer">
+				<% if(page.prev){ %>
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="<%=url_for(page.prev.path)%>" rel="prev"  title="<%=page.prev.title%>">
+						<%= page.prev.title %> 
+					</a></span>
+				<% } %>
+				<% if(page.next){ %>
+					<span class="art-item-right">next：<a href="<%=url_for(page.next.path) %>" rel="next"  title="<%=page.next.title %>">
+						<%=page.next.title  %>
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				<%} %>
+		</div>
+	<%} %>
+	</section>
+	<% if (page.comments && config.disqus_shortname){ %>
+		<section id="comments">
+			<div id="disqus_thread"></div>
+		</section>
+	<% } %>
+</article>
+<% if (page.comments){ %>
+	<%- partial('_partial/comments') %>
+<% } %>
+<script>
+	window.subData = {
+		title: '<%= page.title %>',
+		tools: true
+	}
+</script>

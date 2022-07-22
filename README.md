@@ -59,8 +59,6 @@ theme: singo
 ```
 ②在末尾添加：
 ``` yml
-avatar: /images/avatar.jpg #你的头像，可自定义
-
 plugins: hexo-generate-feed
 
 search:
@@ -117,7 +115,7 @@ feed:
   hub:
   content:
 ```
-
+④ 将`themes/singo/_source/`的`links`文件夹拷贝到hexo根目录下的`source`文件夹下
 ### 更新
 ``` bash
 cd themes/singo

@@ -19,14 +19,17 @@ search:
   # baidu
   baidu_api_id:
 
-# 顶部菜单（PS：后面需要添加斜杠才能保证pjax的正常运行！slug请在fontawesome选择）
+# 顶部菜单（PS：后面需要添加斜杠才能保证pjax的正常运行！）
 menu:
   - name: 主页
     slug: fa fa-home
     url: /
   - name: 归档
     slug: fa fa-archive
-    url: /archives
+    url: /archives/
+  - name: 友链
+    slug: fa fa-external-link
+    url: /links/
 
 # ========================================================================================
 # Sidebar
@@ -43,7 +46,10 @@ widgets:
   - qweather
   - music
 
-# 侧边栏社交链接（slug请在fontawesome选择）
+# 侧边栏头像
+avatar: /images/avatar.jpg
+
+# 侧边栏社交链接
 social:
 - name: github
   slug: fa fa-github
@@ -52,7 +58,7 @@ social:
   slug: fa fa-rss
 	url: /atom.xml
 
-# 侧边天气 KEY（在 https://widget.qweather.com/create-simple 这里创建一个，然后直接复制key到此，当然用我的key也行，只不过可能会随时失效）
+# 侧边天气 KEY（在 https://widget.qweather.com/create-simple 这里创建一个，然后直接复制key到此，当然用我默认的也行，但可能随时失效）
 weather: 42fbe0b777324e8e98785e69a3a69b87
 
 # 侧边音乐播放器
@@ -68,6 +74,25 @@ music:
   order: random #播放器播放顺序，值：“list”，“random”
   preload: auto #默认就行
   listfolded: true #指示列表是否应该首先折叠
+
+# ========================================================================================
+# 友情链接
+# ========================================================================================
+
+# 友情链接配置：
+# 编辑博客根目录下的“_config.yml”，设置“title”（博客名）、“description”（博客描述）、“url”（博客网址）
+# 再编辑linkavatar（PS：必须是https开头！）
+linkavatar: https://www.xsnetw.cf/images/avatar.jpg
+links:
+  - name: SinGO博客
+    link: https://www.xsnetw.cf
+    avatar: https://www.xsnetw.cf/images/avatar.jpg
+    info: 害怕孤独，却享受孤独
+
+#  - name: 名称（如SinGO博客）
+#    link: 链接（如：https://www.xsnetw.cf）
+#    avatar: 头像链接（如 https://www.xsnetw.cf/images/avatar.jpg）
+#    info: 描述：（如：害怕孤独，却享受孤独）
 
 # ========================================================================================
 # 附加功能
@@ -87,7 +112,7 @@ discuss:
 # Twikoo
 # https://twikoo.js.org/
 twikoo:
-  enable: true # 是否启用 Twikoo 评论系统
+  enable: false # 是否启用 Twikoo 评论系统
   envId:  # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
   region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
   lang: zh-CN #用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
@@ -105,18 +130,18 @@ gitalk:
   labels: #你的issue标签
   distractionFreeMode: true  #无干扰模式
 
-## 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
-## 申请请到：https://icp.gov.moe/join.php
-## 然后把号码粘贴到“code”页面即可（PS:“萌ICP备”不用加上去！）
+# 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
+# 申请请到：https://icp.gov.moe/join.php
+# 然后把号码粘贴到“code”页面即可（PS:“萌ICP备”不用加上去！）
 moeicp:
   enable: false
   code: 
 
-## 不蒜子统计
-## https://busuanzi.ibruce.info
+# 不蒜子统计
+# https://busuanzi.ibruce.info
 busuanzi: true
 
-## canvas
+# canvas
 canvas: true
 
 # Less
