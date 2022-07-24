@@ -3,6 +3,7 @@
 	z-index: 9999;
 	top:0;
 	left:0;
+	backdrop-filter: blur(20px);
 	width:100%;
 	font-size: @header-font-size;
 	line-height: @header-height;
@@ -39,7 +40,7 @@
 			.enable-trans();
 			display: block;
 			color: fade(@white,70%);
-			margin: 0 5px;
+			padding: 0 9px;
 			&:hover{
 				color: @white;
 			}
@@ -131,7 +132,7 @@
 		line-height: @search-height;
 		font-family: @base-font-family;
 		border: none;
-		border-radius: 3px;
+		border-radius: 20px;
 		background:fade(@white,15%);
 		box-sizing: border-box;
 		-webkit-appearance: none;

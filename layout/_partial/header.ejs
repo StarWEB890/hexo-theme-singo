@@ -9,7 +9,7 @@
 					<% (theme.menu||[]).forEach(function(value){ %>
 						<li>
 							<a class='flat-box nav' href='<%=url_for(value.url)%>'>
-								<i class="<%=value.slug%>" aria-hidden="true"></i>&nbsp;<%=value.name%>
+								<i class="<%=value.slug%>" aria-hidden="true"></i>&nbsp;<%- __('header.' + value.name) %>
 							</a>
 						</li>
 					<%})%>
@@ -18,7 +18,7 @@
 			<% if (theme.search.enable === true) { %>
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
+						<input type="text" class="input u-search-input" placeholder="<%- __('header.search') %>" />
 						<span class="icon icon-search"></span>
 					</form>
 				</div>

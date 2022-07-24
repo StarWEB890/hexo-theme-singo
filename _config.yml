@@ -21,15 +21,18 @@ search:
 
 # 顶部菜单（PS：后面需要添加斜杠才能保证pjax的正常运行！）
 menu:
-  - name: 主页
+  - name: home
     slug: fa fa-home
     url: /
-  - name: 归档
+  - name: archive
     slug: fa fa-archive
     url: /archives/
-  - name: 友链
+  - name: friend
     slug: fa fa-external-link
     url: /links/
+  - name: note
+    slug: fa fa-sticky-note-o
+    url: /note/
 
 # ========================================================================================
 # Sidebar
@@ -99,36 +102,32 @@ links:
 # ========================================================================================
 
 # 评论功能
-
-# Discuss
-# https://discuss.js.org/
-# （自定义表情请在主题目录下“layout/_thirdparty/emoji.ejs”添加方式请看：https://discuss.js.org/Quick-Start.html#emotmaps）
-discuss:
-  enable: false # 是否启用 discuss 评论系统
-  server_url:  #评论服务端地址
-  lang: cn #用于手动设定评论区语言，支持的语言列表 https://discuss.js.org/Quick-Start.html#lang
-  ph: 有话想说？ #原名placeholder，评论框占位符，可自定义，默认值与lang有关系
-
-# Twikoo
-# https://twikoo.js.org/
-twikoo:
-  enable: false # 是否启用 Twikoo 评论系统
-  envId:  # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-  region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-  lang: zh-CN #用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
-
-# Gitalk
-# https://gitalk.github.io/
-# 网上有教程，可以的话按照教程来配置
-gitalk:
-  enable: false # 是否启用 gitalk 评论系统
-  admin:  # 你的 GitHub 用户名
-  owner:  # Github 仓库管理者用户名
-  repo:  # GitHub 博客的仓库名称
-  ClientID:  # 你的ClientID
-  ClientSecret: # 你的Client Secret
-  labels: #你的issue标签
-  distractionFreeMode: true  #无干扰模式
+comment:
+  enable: true # 开启评论功能
+  type: twikoo # discuss | twikoo | gitalk 
+  # Gitalk设置：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
+  # Discuss设置：https://discuss.js.org
+  # Twikoo设置：https://twikoo.js.org
+  discuss:
+    server_url: https://sin-go-discuss.vercel.app #评论服务端地址
+    lang: cn #用于手动设定评论区语言，支持的语言列表 https://discuss.js.org/Quick-Start.html#lang
+    ph: 有话想说？ #原名placeholder，评论框占位符，可自定义，默认值与lang有关系
+  twikoo:
+    envId: https://sin-go-twikoo.vercel.app/ # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+    region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+    lang: zh-CN #用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
+  gitalk:
+    clientID:
+    clientSecret:
+    repo:
+    owner:
+    admin:
+    id: location.href
+    distractionFreeMode: false
+    # en | zh-CN | zh-TW
+    language: navigator.language || navigator.userLanguage
+    labels: ['Gitalk']
+    perPage: 10
 
 # 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
 # 申请请到：https://icp.gov.moe/join.php
@@ -151,11 +150,24 @@ less:
 # Pjax
 pjax: true
 
+# Artitalk（note页面需要Artitalk）
+# （建议：https://artitalk.js.org/settings.html#artitalk-safemode）
+# 开启之后，需要在你想添加的文章或者页面（title下面）加上：
+# type: "artitalk"
+# layout: "artitalk"
+artitalk:
+  enable: true
+  serverURL: 
+  #LeanCloud中国版填绑定的API域名，如果你想使用Artitalk_SafeMode就填写“xxxx.workers.dev域名”（但建议CloudFlare绑定域名）
+  appID:  #LeanCloud APPID（Artitalk_SafeMode可以滚键盘）
+  appKey:  #LeanCloud APPKEY（Artitalk_SafeMode可以滚键盘）
+
+
 # 在线聊天（类似在线客服）
 
 #Chatra
 chatra: 
-  enable: false
+  enable: true
   public_key:  #直接复制Public key到此就行
 
 #Daovoice
@@ -164,6 +176,6 @@ daovoice:
   app_id:  #直接复制app_id到此就行
 
 # ========================================================================================
-# CDN选择
+# CDN
 # ========================================================================================
 fontawesome: https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css

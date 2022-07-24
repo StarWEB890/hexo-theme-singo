@@ -1,0 +1,36 @@
+header:
+  home: Home
+  archive: Archives
+  friend: Friends
+  about: About
+  note: Notes
+  search: Search....
+
+article:
+  readmore: Read More
+
+  archive: Archives
+  friend: Links
+  welcomelinks: Welcome to add friend chain with me!
+  friendformat: Friend chain Format
+
+  previous: Prev
+  next: Next
+  comments: Comments
+
+archive:
+  previous: Previous
+  next: Next
+
+sidebar:
+  category: Catrgories
+  tagcloud: Tags
+  social: Social links
+  weather: Weather
+
+footer:
+  total: Total
+  total_hit: views.
+
+  visitors: Number of visitors：
+  visitors_hit: hits

@@ -122,4 +122,4 @@ cd themes/singo
 git pull origin master
 ``` 
 ## 更新日志
-[点我查看](https://github.com/StarWEB890/hexo-theme-singo/blob/master/UPDATE.md) or [加入Q群：623816093](https://jq.qq.com/?_wv=1027&k=moLMRjwC)
+[点我查看](https://www.xsnetw.cf/update/) or [加入Q群：623816093](https://jq.qq.com/?_wv=1027&k=moLMRjwC)

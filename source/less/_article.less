@@ -53,11 +53,12 @@
         color: darken(@accent-color, 2%);
         &:hover {
             color: darken(@accent-color, 3%);
-            background: fade(@accent-color, 10%);
+            background: #8eebe3;
         }
         &:active {
             background: fade(@accent-color, 20%);
             color: @white;
+            backdrop-filter: blur(10px);
         }
     }
     h1,
@@ -125,10 +126,26 @@
         // display: none; // howtodesign?
         font-size: 1.2rem;
         margin-top: @gap;
+        text-align: center;
         a {
+            border: 2px solid #555;
+            border-radius: 2px;
+            color: #555;
             display: inline-block;
-            vertical-align: middle;
-            line-height: 2rem;
+            font-size: 14px;
+            line-height: 2;
+            padding: 0 20px;
+            transition: background-color 0.2s ease-in-out;
+            &:hover {
+                background: #222;
+                border-color: #222;
+                color: #fff;
+            }
+            &:active {
+                background: fade(@accent-color, 20%);
+                color: @white;
+                backdrop-filter: blur(10px);
+            }
         }
     }
     .tags {
@@ -139,7 +156,7 @@
         line-height: 1.5rem;
         margin-top: @gap;
         border-radius: 0 0 @gap @gap;
-        background-color: rgba(255,255,255,0.4);
+        background-color: rgba(255,255,255,0.2);
         &.article-tags {
             background: transparent;
         }

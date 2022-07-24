@@ -4,7 +4,7 @@
     <section class='meta'>
     <h2 class="title">
       <a href="<%- url_for(page.path) %>">
-        <%= page.title %>
+         <%- __('article.friend') %>
      </a>
    </h2>
     </section>
@@ -26,9 +26,11 @@
           font-size: 1rem;
           padding: 10px 20px;
           border-radius: 4px;
-          transition-duration: 0.15s;
+          transition-duration: 0.55s;
           margin-bottom: 1rem;
           display:flex;
+          box-shadow: 0 2px 6px 0 rgba(0, 242, 255, 0.92), 0 0 6px 0 rgba(0, 242, 255, 0.94);
+          border: 2px solid var(--primary-color, #00F2FF);
           }
           .card:nth-child(odd) {
           float: right;
@@ -37,11 +39,15 @@
           float: left;
           }
           .card:hover {
+          background-color: #00F2FF;
           transform: scale(1.1);
-          box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+          box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.14);
           }
           .card a {
           border:none;
+          }
+          .card a:active {
+          backdrop-filter: blur(10px);
           }
           .card .ava {
           width: 3rem!important;
@@ -59,11 +65,15 @@
           font-style: normal;
           color: #2bbc8a;
           font-weight: bold;
+          white-space: nowrap;
           text-decoration: none;
           }
           .card .card-header a:hover {
           color: #d480aa;
           text-decoration: none;
+          }
+          .card .card-header a:active {
+          backdrop-filter: blur(10px);
           }
           .card .card-header .info {
           font-style:normal;
@@ -79,7 +89,7 @@
             <h3>大佬们</h3>
             <% (theme.links||[]).forEach(function(link){ %>
              <div class="card">
-                <img class="ava" src="<%=link.avatar%>" />
+               <a href="<%=url_for(link.link)%>"><img class="ava" src="<%=link.avatar%>" /></a>
                 <div class="card-header">
                    <div>
                       <a href="<%=url_for(link.link)%>"><%=link.name%></a>
@@ -91,8 +101,8 @@
           </div>
        </div>
     </div>
-    <p>欢迎跟我添加友链！</p>
-<pre style="overflow-x: hidden;"><code>友链格式：
+    <p><%- __('article.welcomelinks') %></p>
+<pre style="overflow-y: hidden;"><code><%- __('article.friendformat') %>：
 - name: <%= config.title%>
   site: <%= config.url%>
   info: <%= config.description%>
@@ -108,30 +118,17 @@
 	  </div>
     <% } %>
 		
-	<% if(page.prev || page.next){ %>
-		<div class="art-item-footer">
-				<% if(page.prev){ %>
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="<%=url_for(page.prev.path)%>" rel="prev"  title="<%=page.prev.title%>">
-						<%= page.prev.title %> 
-					</a></span>
-				<% } %>
-				<% if(page.next){ %>
-					<span class="art-item-right">next：<a href="<%=url_for(page.next.path) %>" rel="next"  title="<%=page.next.title %>">
-						<%=page.next.title  %>
-					</a><i class="icon icon-chevron-thin-right"></i></span>
-				<%} %>
-		</div>
-	<%} %>
 	</section>
-	<% if (page.comments && config.disqus_shortname){ %>
-		<section id="comments">
-			<div id="disqus_thread"></div>
-		</section>
-	<% } %>
 </article>
-<% if (page.comments){ %>
-	<%- partial('_partial/comments') %>
-<% } %>
+<% if (page.comments && theme.comment.enable){ %>
+	<article class="animated rubberBand slideInRight " style="backdrop-filter: blur(20px);box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);margin:15px 0 0 0;padding:11px;background-color:rgba(255, 255, 255, 0.8);border-radius: 20px;">
+      <h2 style="position: relative;font-family: 'Titillium Web', Helvetica, 'Hiragino Sans GB', 'Hiragino Sans GB W3', Source Han Sans CN Regular, WenQuanYi Micro Hei, 'Microsoft YaHei', Arial, sans-serif;font-weight: normal;margin: 20px auto 20px;left: 3px;">
+         <i class="fa fa-comment" aria-hidden="true" style="color: #4caf50;"></i>
+         <%- __('article.comments') %>
+      </h2>
+      <%- partial('_thirdparty/comments/' + theme.comment.type) %>
+      </article>
+   <% } %>
 <script>
 	window.subData = {
 		title: '<%= page.title %>',

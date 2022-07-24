@@ -69,7 +69,8 @@
         margin: 0 auto;
         padding: 2 * @gap 1.5*@gap;
         //max-width: 768px;
-        background: rgba(255,255,255,0.85);
+        backdrop-filter: blur(20px);
+        background: rgba(255,255,255,0.7);
         border-radius: @gap;
         &:extend(.z-depth-1);
         .meta {
@@ -114,7 +115,7 @@
                 }
             }
             time {
-                color: lighten(@grey-color, 20%);
+                color: lighten(#888888, 20%);
             }
         }
         .full-width,.highlight{

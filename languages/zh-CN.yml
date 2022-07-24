@@ -1,0 +1,37 @@
+header:
+  home: 主页
+  archive: 归档
+  friend: 友链
+  about: 关于
+  note: 笔记
+  search: 要搜什么？
+
+article:
+  readmore: 阅读更多....
+
+  archive: 归档
+  friend: 友情链接
+  welcomelinks: 欢迎跟我添加友链！
+  friendformat: 友链格式
+
+  previous: 上一篇
+  next: 下一篇
+  comments: 评论
+
+archive:
+  previous: 上一页
+  next: 下一页
+
+sidebar:
+  category: 分类
+  tagcloud: 标签云
+  social: 社交链接
+  weather: 天气
+
+footer:
+  total: 总访问量
+  total_hit: 次
+  
+  visitors: 访客人数：
+  visitors_hit: 人次
+  

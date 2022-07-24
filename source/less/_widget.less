@@ -29,6 +29,7 @@
         justify-content: space-between;
         align-content: center; 
         .name{
+            position: static;
             flex:auto;
             &:extend(.txt-ellipsis);
             color: darken(@grey-color,10%);
@@ -46,6 +47,7 @@
     .waves-effect,img{
         width: 100%;
         display: block;
+        position: static;
     }
     @media(max-width: @on-phone){
         display:none;
@@ -53,22 +55,12 @@
     .content{
         padding:0;
         .desc{
-            position: relative;
             padding: @gap;
             background-color:rgba(255,255,255,0.2);
             .enable-trans(.15s);
             line-height: 1.2em;
             font-style: italic;
             border-radius: @gap;
-            &:before{
-                content:'';
-                position: absolute;
-                left:0;
-                top:0;
-                width:2px;
-                height:50%;
-                background:@secondary-color;
-                margin: 21px 0px 0 0.5px;
             }
             &:empty{
                 padding:0;
@@ -76,7 +68,6 @@
             }
         }
     }
-}
 .m_widget.tagcloud{
     .content{
         padding: 10px 20px;

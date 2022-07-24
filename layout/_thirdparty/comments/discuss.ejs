@@ -1,0 +1,32 @@
+<% if(theme.comment.discuss.server_url) { %>
+  <div id="Discuss-Comments"></div>
+  <script>
+function load_discuss() {
+setTimeout(function() {
+  var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+  var src = 'https://lib.baomitu.com/discuss/0.3.8/Discuss.min.js'
+  var script = document.createElement('script')
+  script.setAttribute('type','text/javascript')
+  script.onload = function() {
+     pjax_discuss()
+  }
+  script.setAttribute('src', src)
+  HEAD.appendChild(script)
+}, 1);
+};
+function pjax_discuss() {
+if(!document.querySelectorAll("#Discuss-Comments")[0])return;
+discuss.init({
+  el: '#Discuss-Comments',
+  serverURLs: '<%= theme.comment.discuss.server_url %>',
+  lang: '<%= theme.comment.discuss.lang %>',
+  ph: '<%= theme.comment.discuss.ph %>',
+  emotMaps: <%- partial('_thirdparty/emoji') %>,
+});
+}
+load_discuss();
+document.addEventListener('pjax:complete', function () {
+pjax_discuss();
+});
+  </script>
+  <% } %>
