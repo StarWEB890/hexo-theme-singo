@@ -99,6 +99,20 @@
              </div>
             <%})%>
           </div>
+          <div class="link-navigation">
+          <h3>小伙伴们</h3>
+          <% (theme.xiaohuoban||[]).forEach(function(link){ %>
+           <div class="card">
+             <a href="<%=url_for(link.link)%>"><img class="ava" src="<%=link.avatar%>" /></a>
+              <div class="card-header">
+                 <div>
+                    <a href="<%=url_for(link.link)%>"><%=link.name%></a>
+                 </div>
+                 <div class="info"><%=link.info%></div>
+              </div>
+           </div>
+          <%})%>
+         </div>
        </div>
     </div>
     <p><%- __('article.welcomelinks') %></p>

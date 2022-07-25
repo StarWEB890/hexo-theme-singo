@@ -27,12 +27,12 @@ menu:
   - name: archive
     slug: fa fa-archive
     url: /archives/
-  - name: friend
-    slug: fa fa-external-link
-    url: /links/
   - name: note
     slug: fa fa-sticky-note-o
     url: /note/
+  - name: friend
+    slug: fa fa-external-link
+    url: /links/
 
 # ========================================================================================
 # Sidebar
@@ -87,12 +87,18 @@ music:
 # 编辑博客根目录下的“_config.yml”，设置“title”（博客名）、“description”（博客描述）、“url”（博客网址）
 # 再编辑linkavatar（PS：必须是https开头！）
 linkavatar: https://www.xsnetw.cf/images/avatar.jpg
-links:
+dalao:
   - name: SinGO博客
     link: https://www.xsnetw.cf
     avatar: https://www.xsnetw.cf/images/avatar.jpg
     info: 害怕孤独，却享受孤独
 
+xiaohuoban:
+  - name: SinGO博客
+    link: https://www.xsnetw.cf
+    avatar: https://www.xsnetw.cf/images/avatar.jpg
+    info: 害怕孤独，却享受孤独
+    
 #  - name: 名称（如SinGO博客）
 #    link: 链接（如：https://www.xsnetw.cf）
 #    avatar: 头像链接（如 https://www.xsnetw.cf/images/avatar.jpg）
