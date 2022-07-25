@@ -1,8 +1,8 @@
 <footer id="footer" class="clearfix">
   <div>
     Copyright &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>. All Rights Reserved.<br>
-    <% if (theme.moeicp.enable){ %>
-      <a href="https://icp.gov.moe/?keyword=<%= theme.moeicp.code %>" target="_blank">萌ICP备<%= theme.moeicp.code %>号</a>
+    <% if (theme.moeicp){ %>
+      <a href="https://icp.gov.moe/?keyword=<%= theme.moeicp.code %>" target="_blank">萌ICP备<%= theme.moeicp %>号</a>
       <br>
     <% } %>
     <% if (theme.busuanzi){ %>
@@ -13,6 +13,58 @@
     <span id="busuanzi_container_site_uv">
       <i class="fa fa-eye"></i> <%- __('footer.visitors') %><span id="busuanzi_value_site_uv"></span>&nbsp;<%- __('footer.visitors_hit') %>
     </span>
+    <br>
+    <% } %>
+    <% if (theme.visit_stat.enable){ %>
+      <script>
+        (function () {
+  'use strict';
+
+  /**
+   * Completely random generation of unique strings
+   * @param {Number} size Generate the length of a random string
+   * @default 10
+   * @returns {String} Randomly generated string
+   */
+  function unique(size) {
+    size = size || 10;
+
+    var r = function r() {
+      return Math.random().toString(36).slice(2);
+    };
+
+    var result = r();
+
+    while (result.length < size) {
+      result += r();
+    }
+
+    return result.slice(0, size);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var id = 'VS_' + unique();
+    var script = document.createElement('script');
+    script.src = '<%= theme.visit_stat.serverURL %>/?p=' + id;
+    script.referrerPolicy = 'no-referrer-when-downgrade';
+
+    window[id] = function (data) {
+      for (var key in data) {
+        var dom = document.getElementById('vs_' + key);
+        if (dom) dom.innerText = data[key];
+      }
+
+      script.parentNode.removeChild(script);
+    };
+
+    document.head.appendChild(script);
+  });
+
+})();
+      </script>
+        <i class="fa fa-user"></i> <%- __('footer.total') %>：<span id="vs_site_pv">0</span>&nbsp;<%- __('footer.total_hit') %>
+         |
+      <i class="fa fa-eye"></i> <%- __('footer.visitors') %><span id="vs_site_uv">0</span>&nbsp;<%- __('footer.visitors_hit') %>
     <br>
     <% } %>
     Powered by <a href="https://hexo.io">Hexo</a> | Themes <a href="https://github.com/StarWEB890/hexo-theme-singo">SinGO</a>

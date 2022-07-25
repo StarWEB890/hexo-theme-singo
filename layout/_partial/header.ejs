@@ -45,7 +45,7 @@
 		<% (theme.menu||[]).forEach(function(value, key) {
 					if (value.url && value.slug && value.name) { %>
 			<a href="<%= url_for(value.url) %>" class="nav-<%= value.slug %> nav">
-				<%= value.name %>
+				<i class="<%=value.slug%>" aria-hidden="true"></i>&nbsp;<%- __('header.' + value.name) %>
 			</a>
 		<% } }); %>
 	</nav>

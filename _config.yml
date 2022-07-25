@@ -72,7 +72,8 @@ music:
   id: 7515491376 #（当然可以用我默认的）歌曲ID(song) /播放列表ID(playlist) /专辑ID(album) /搜索关键字(search) /歌手ID(artist)
   mini: false #迷你模式（注意：与吸底模式冲突）
   fixed: true #吸低模式（注意：与迷你模式冲突）
-  autoplay: true #自动播放
+  volume: 0.4 #默认音量
+  autoplay: false #自动播放
   loop: all #播放器循环播放，值：“all”，one”，“none”
   order: random #播放器播放顺序，值：“list”，“random”
   preload: auto #默认就行
@@ -131,14 +132,20 @@ comment:
 
 # 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
 # 申请请到：https://icp.gov.moe/join.php
-# 然后把号码粘贴到“code”页面即可（PS:“萌ICP备”不用加上去！）
-moeicp:
-  enable: false
-  code: 
+# 然后把号码粘贴到这里即可（PS:“萌ICP备”不用加上去！）
+moeicp: 
 
 # 不蒜子统计
 # https://busuanzi.ibruce.info
 busuanzi: true
+
+# Visit-Stat统计
+# https://github.com/Lete114/Visit-Stat
+# 服务端搭建教程：https://www.xsnetw.cf/posts/54175/
+# 把服务端地址复制到下面的“serverURL”就行（后面千万不要“/”!）
+visit_stat:
+  enable: false
+  serverURL: 
 
 # canvas
 canvas: true
