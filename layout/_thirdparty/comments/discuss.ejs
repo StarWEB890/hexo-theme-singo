@@ -4,7 +4,7 @@
 function load_discuss() {
 setTimeout(function() {
   var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-  var src = 'https://lib.baomitu.com/discuss/0.3.8/Discuss.min.js'
+  var src = '<%= theme.CDN.comment.discuss %>'
   var script = document.createElement('script')
   script.setAttribute('type','text/javascript')
   script.onload = function() {

@@ -36,11 +36,8 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <% if (theme.fontawesome){ %>
-    <link href='<%= theme.fontawesome %>' rel='stylesheet'>
-  <% } %>
-  <% if (theme.canvas) { %>
-    <script type="text/javascript" color="#414141" opacity='1' zIndex="-2" count="100" src="/js/canvas-nest.min.js"></script>
+  <% if (theme.CDN.fontawesome){ %>
+    <link href='<%= theme.CDN.fontawesome %>' rel='stylesheet'>
   <% } %>
   <%- css('style.css') %>
   <script>

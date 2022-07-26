@@ -4,7 +4,7 @@
      <section class='meta'>
      <h2 class="title">
        <a href="<%- url_for(page.path) %>">
-        SinGO主题更新记录
+        笔记
       </a>
     </h2>
      </section>
@@ -18,7 +18,7 @@
       function load_artitalk() {
     setTimeout(function() {
         var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-        var src = 'https://unpkg.com/artitalk'
+        var src = '<%= theme.CDN.artitalk %>'
         var script = document.createElement('script')
         script.setAttribute('type','text/javascript')
         script.onload = function() {

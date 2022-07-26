@@ -11,10 +11,7 @@
 
 3.保留了之前SinGO主题的风格
 
-4.添加~~Waline~~、Gitalk、Twikoo、[Discuss](https://discuss.js.org/)评论
-``` bash
-2022-07-20：由于Waline手机访问有BUG，所以将其去掉，如果有解决方法，欢迎跟我PR！
-```
+4.添加Waline、Gitalk、Twikoo、[Discuss](https://discuss.js.org/)评论
 
 5.添加网页在线聊天系统
 

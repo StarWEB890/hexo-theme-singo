@@ -30,9 +30,15 @@ menu:
   - name: note
     slug: fa fa-sticky-note-o
     url: /note/
+  - name: about
+    slug: fa fa-user-o
+    url: /about/
   - name: friend
     slug: fa fa-external-link
     url: /links/
+  - name: update
+    slug: fa fa-history
+    url: /update/
 
 # ========================================================================================
 # Sidebar
@@ -67,17 +73,20 @@ weather: 42fbe0b777324e8e98785e69a3a69b87
 # 侧边音乐播放器
 # 使用APlayer+MetingJS
 music:
-  server: netease  #音乐平台：netease(网易云音乐)，tencent(QQ音乐)，kugou(酷狗音乐)
-  type: playlist  #歌曲类型song，playlist，album，search，artist
-  id: 7515491376 #（当然可以用我默认的）歌曲ID(song) /播放列表ID(playlist) /专辑ID(album) /搜索关键字(search) /歌手ID(artist)
-  mini: false #迷你模式（注意：与吸底模式冲突）
-  fixed: true #吸低模式（注意：与迷你模式冲突）
-  volume: 0.4 #默认音量
-  autoplay: false #自动播放
-  loop: all #播放器循环播放，值：“all”，one”，“none”
-  order: random #播放器播放顺序，值：“list”，“random”
-  preload: auto #默认就行
-  listfolded: true #指示列表是否应该首先折叠
+  enable: true
+  autoHide: true    # hide automaticaly
+  server: netease   # require	music platform: netease, tencent, kugou, xiami, baidu
+  type: playlist    #require song, playlist, album, search, artist
+  id: 7515491376     # require	song id / playlist id / album id / search keyword
+  fixed: true       # 开启吸底模式
+  autoplay: false   # 是否自动播放
+  theme: '#42b983'
+  loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'random'   # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  listFolded: true  # 列表默认折叠
+  hideLrc: false     # 隐藏歌词
 
 # ========================================================================================
 # 友情链接
@@ -88,16 +97,31 @@ music:
 # 再编辑linkavatar（PS：必须是https开头！）
 linkavatar: https://www.xsnetw.cf/images/avatar.jpg
 dalao:
-  - name: SinGO博客
-    link: https://www.xsnetw.cf
-    avatar: https://www.xsnetw.cf/images/avatar.jpg
-    info: 害怕孤独，却享受孤独
+  - name: SeaYJ
+    link: https://seayj.cn
+    avatar: https://seayj.cn/medias/logo.png
+    info: 追随大佬的脚步越走越远…
+
+  - name: 时过境迁Wayne博客
+    link: https://wr0926.ml
+    avatar: https://cdn.staticaly.com/gh/wayne0926/myphoto@master/img/avatar.jpg
+    info: 以梦为马，不负韶华。
+
+  - name: W4J1e's blog（这位大佬暂时不收主动友链）
+    avatar: https://hin.cool/favicon.ico
+    link: https://hin.cool
+    info: 总是偏爱不务正业
+
+  - name: 冬雷博客
+    avatar: https://cdn.sep.cc/avatar/35eea7c3d016eae6af206e202f75a23c?s=80
+    link: https://www.idonglei.com/
+    info: 三餐四季，从来都是一半生存一半诗，做到哪里算哪里咯
 
 xiaohuoban:
-  - name: SinGO博客
-    link: https://www.xsnetw.cf
-    avatar: https://www.xsnetw.cf/images/avatar.jpg
-    info: 害怕孤独，却享受孤独
+  - name: 萌！萝莉
+    link: https://loliloli.moe
+    avatar: https://img.cdn.loliloli.net/images/2021/01/11/avatar.jpg
+    info: 一个普通的小博客哦~
     
 #  - name: 名称（如SinGO博客）
 #    link: 链接（如：https://www.xsnetw.cf）
@@ -111,10 +135,12 @@ xiaohuoban:
 # 评论功能
 comment:
   enable: true # 开启评论功能
-  type: twikoo # discuss | twikoo | gitalk 
+  type: waline # discuss | twikoo | gitalk | waline | giscus
   # Gitalk设置：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
   # Discuss设置：https://discuss.js.org
   # Twikoo设置：https://twikoo.js.org
+  # Waline设置：https://waline.js.org
+  # Giscus设置：https://giscus.app/zh-CN
   discuss:
     server_url: https://sin-go-discuss.vercel.app #评论服务端地址
     lang: cn #用于手动设定评论区语言，支持的语言列表 https://discuss.js.org/Quick-Start.html#lang
@@ -135,11 +161,40 @@ comment:
     language: navigator.language || navigator.userLanguage
     labels: ['Gitalk']
     perPage: 10
+  giscus:
+    repo: ''
+    repo_id: ''
+    category: ''
+    category_id: ''
+    mapping: 'pathname'
+    input_position: 'top'
+    theme: 'light'
+    lang: 'zh-CN'
+  waline:
+    # 更多选项 https://waline.js.org/reference/component.html 按照yml格式继续填写即可
+    serverURL: https://wle.xsnetw.cf/
+    login: force # disable（关闭登录功能） | enable（开启登录功能） | force（强制登录）
+    meta: ['nick', 'mail', 'link'] #（login设置force时此项无效）评论者相关属性。可选值: 'nick', 'mail', 'link'
+    requiredMeta: ['nick', 'mail'] #（login设置force时此项无效）设置必填项，默认匿名，可选值: [] 、 ['nick'] 、 ['nick', 'mail']
+    emoji: [
+    '//unpkg.com/@waline/emojis@1.0.1/weibo',
+    'https://emoji.shojo.cn/bili/src/小黄脸',
+    '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+    'https://emoji.shojo.cn/bili/src/进击的冰糖',
+    'https://emoji.shojo.cn/bili/src/冰糖IO 蜕变·闪耀',
+    'https://emoji.shojo.cn/bili/src/枕边童话',
+    'https://emoji.shojo.cn/bili/src/咩栗',
+    'https://emoji.shojo.cn/bili/src/呜米',
+    'https://emoji.shojo.cn/bili/src/多多poi',
+    'https://emoji.shojo.cn/bili/src/穆小泠',
+    'https://emoji.shojo.cn/bili/src/早稻叽',
+    ]
+
 
 # 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
 # 申请请到：https://icp.gov.moe/join.php
 # 然后把号码粘贴到这里即可（PS:“萌ICP备”不用加上去！）
-moeicp: 
+moeicp: 20210071
 
 # 不蒜子统计
 # https://busuanzi.ibruce.info
@@ -151,10 +206,7 @@ busuanzi: true
 # 把服务端地址复制到下面的“serverURL”就行（后面千万不要“/”!）
 visit_stat:
   enable: false
-  serverURL: 
-
-# canvas
-canvas: true
+  serverURL: https://sin-go-visit-stat.vercel.app
 
 # Less
 less:
@@ -170,10 +222,10 @@ pjax: true
 # layout: "artitalk"
 artitalk:
   enable: true
-  serverURL: 
-  #LeanCloud中国版填绑定的API域名，如果你想使用Artitalk_SafeMode就填写“xxxx.workers.dev域名”（但建议CloudFlare绑定域名）
-  appID:  #LeanCloud APPID（Artitalk_SafeMode可以滚键盘）
-  appKey:  #LeanCloud APPKEY（Artitalk_SafeMode可以滚键盘）
+  serverURL: https://artitalknote.xsnetw.cf
+  #LeanCloud中国版填绑定的API域名，如果你想使用Artitalk_SafeMode就填写“xxxx.workers.dev域名”
+  appID: 3vu48h5cwhch54hcvhtuh4chuvhvu44htvu4mhfughm #LeanCloud APPID（Artitalk_SafeMode可以滚键盘）
+  appKey: 5u4vf345v857m7vn78b5ub698ymu6v6c509tvntb6vn7cm8x9icvn #LeanCloud APPKEY（Artitalk_SafeMode可以滚键盘）
 
 
 # 在线聊天（类似在线客服）
@@ -181,14 +233,38 @@ artitalk:
 #Chatra
 chatra: 
   enable: true
-  public_key:  #直接复制Public key到此就行
+  public_key: QP8pJHEonhoChjMN6 #直接复制Public key到此就行
 
 #Daovoice
 daovoice: 
   enable: false
-  app_id:  #直接复制app_id到此就行
+  app_id: fc15090b #直接复制app_id到此就行
 
 # ========================================================================================
 # CDN
 # ========================================================================================
-fontawesome: https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css
+CDN:
+  # fontawesome
+  fontawesome: https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css
+
+  # Artitalk
+  artitalk: https://unpkg.com/artitalk
+
+  #评论
+  comment:
+    twikoo: https://cdn.staticfile.org/twikoo/1.5.11/twikoo.all.min.js
+    discuss: https://lib.baomitu.com/discuss/0.3.8/Discuss.min.js
+    giscus: https://giscus.app/client.js
+    waline:
+      css: https://unpkg.com/@waline/client@v2/dist/waline.css
+      js: https://unpkg.com/@waline/client@v2/dist/waline.js
+    gitalk:
+      css: https://unpkg.com/gitalk@latest/dist/gitalk.css
+      js: https://unpkg.com/gitalk@latest/dist/gitalk.min.js
+      md5: https://priesttomb.github.io/js/md5.min.js
+  
+  # 音乐
+  aplayer:
+    css: https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css
+    js: https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js
+    metingjs: https://unpkg.com/meting/dist/Meting.min.js
