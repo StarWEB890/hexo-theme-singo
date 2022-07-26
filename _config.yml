@@ -67,7 +67,6 @@ weather: 42fbe0b777324e8e98785e69a3a69b87
 # 侧边音乐播放器
 # 使用APlayer+MetingJS
 music:
-  enable: true
   autoHide: true    # hide automaticaly
   server: netease   # require	music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
