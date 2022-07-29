@@ -22,16 +22,16 @@ search:
 # 顶部菜单（PS：后面需要添加斜杠才能保证pjax的正常运行！）
 menu:
   - name: home
-    slug: fa fa-home
+    slug: fa-solid fa-house
     url: /
   - name: archive
-    slug: fa fa-archive
+    slug: fa-solid fa-box-archive
     url: /archives/
   - name: note
-    slug: fa fa-sticky-note-o
+    slug: fa-solid fa-note-sticky
     url: /note/
   - name: friend
-    slug: fa fa-external-link
+    slug: fa-solid fa-link
     url: /links/
 
 # ========================================================================================
@@ -54,11 +54,14 @@ avatar: /images/avatar.jpg
 
 # 侧边栏社交链接
 social:
-- name: github
-  slug: fa fa-github
+- name: Github
+  slug: fa-brands fa-github
   url: https://github.com/StarWEB890
-- name: rss
-  slug: fa fa-rss
+- name: Bilibili
+  slug: fa-brands fa-bilibili
+	url: https://space.bilibili.com/479627766
+- name: RSS
+  slug: fa-solid fa-square-rss
 	url: /atom.xml
 
 # 侧边天气 KEY（在 https://widget.qweather.com/create-simple 这里创建一个，然后直接复制key到此，当然用我默认的也行，但可能随时失效）
@@ -223,7 +226,7 @@ daovoice:
 # ========================================================================================
 CDN:
   # fontawesome
-  fontawesome: https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css
+  fontawesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css
 
   # Artitalk
   artitalk: https://unpkg.com/artitalk
