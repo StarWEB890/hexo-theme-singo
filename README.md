@@ -112,7 +112,7 @@ feed:
   hub:
   content:
 ```
-④ 将`themes/singo/_source/`的`links`文件夹拷贝到hexo根目录下的`source`文件夹下
+④ 将`themes/singo/_source/`的`links`文件夹和`say`文件夹拷贝到hexo根目录下的`source`文件夹下
 ### 更新
 ``` bash
 cd themes/singo

@@ -10,39 +10,10 @@
      </section>
      <section class="article typo">
        <div class="article-entry" itemprop="articleBody">
-        <% if (theme.artitalk.enable){ %>
-        <!-- 引用 artitalk -->
-<!-- 存放说说的容器 -->
-<div id="artitalk_main"></div>
-<script>
-      function load_artitalk() {
-    setTimeout(function() {
-        var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-        var src = '<%= theme.CDN.artitalk %>'
-        var script = document.createElement('script')
-        script.setAttribute('type','text/javascript')
-        script.onload = function() {
-           pjax_artitalk()
-        }
-        script.setAttribute('src', src)
-        HEAD.appendChild(script)
-    }, 1);
-};
-function pjax_artitalk() {
-    if(!document.querySelectorAll("#artitalk_main")[0])return;
-    new Artitalk({
-    serverURL: '<%= theme.artitalk.serverURL %>',
-    appId: '<%= theme.artitalk.appID %>', // Your LeanCloud appId
-    appKey: '<%= theme.artitalk.appKey %>' // Your LeanCloud appKey
-});
-}
-load_artitalk();
-document.addEventListener('pjax:complete', function () {
-    pjax_artitalk();
-});
-</script>
+        <% if (theme.shuoshuo.enable){ %>
+          <%- partial('_thirdparty/shuoshuo/' + theme.shuoshuo.type) %>
 <% } else { %>
-  你尚未配置Artitalk！！
+  站长已关闭说说
   <% } %>
         </div>
      </section>

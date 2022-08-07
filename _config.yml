@@ -27,9 +27,9 @@ menu:
   - name: archive
     slug: fa-solid fa-box-archive
     url: /archives/
-  - name: note
+  - name: say
     slug: fa-solid fa-note-sticky
-    url: /note/
+    url: /say/
   - name: friend
     slug: fa-solid fa-link
     url: /links/
@@ -60,6 +60,9 @@ social:
 - name: Bilibili
   slug: fa-brands fa-bilibili
 	url: https://space.bilibili.com/479627766
+- name: Email
+  slug: fa-solid fa-envelope
+	url: mailto:starinno@xsnetw.cf
 - name: RSS
   slug: fa-solid fa-square-rss
 	url: /atom.xml
@@ -116,7 +119,7 @@ xiaohuoban:
 # 评论功能
 comment:
   enable: false # 开启评论功能
-  type: waline # discuss | twikoo | gitalk | waline | giscus
+  type: discuss # discuss | twikoo | gitalk | waline | giscus
   # Gitalk设置：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
   # Discuss设置：https://discuss.js.org
   # Twikoo设置：https://twikoo.js.org
@@ -201,12 +204,32 @@ pjax: true
 # 开启之后，需要在你想添加的文章或者页面（title下面）加上：
 # type: "artitalk"
 # layout: "artitalk"
-artitalk:
-  enable: false
-  serverURL: 
-  #LeanCloud中国版填绑定的API域名，如果你想使用Artitalk_SafeMode就填写“xxxx.workers.dev域名”
-  appID:  #LeanCloud APPID（Artitalk_SafeMode可以滚键盘）
-  appKey:  #LeanCloud APPKEY（Artitalk_SafeMode可以滚键盘）
+shuoshuo:
+  enable: true
+  type: kkapi # artitalk | kkapi | daodao
+  artitalk: # https://artitalk.js.org/
+    serverURL: 
+    #LeanCloud中国版填绑定的API域名，如果你想使用Artitalk_SafeMode就填写“xxxx.workers.dev域名”
+    appID:  #LeanCloud APPID（Artitalk_SafeMode可以滚键盘）
+    appKey:  #LeanCloud APPKEY（Artitalk_SafeMode可以滚键盘）
+  kkapi: # https://kkapi.js.org/
+    serverURL:  # 部署kkapi地址（记住不是kkapi-open的地址！）
+    author:  # 个人id
+    loadimg: https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/images/load.6i582rbr59s0.gif #加载动画
+    discuss_url:  # kkapi评论使用Discuss的评论，当然可以和你上面的的Discuss评论服务端地址共用
+  daodao_swiper: # 需要安装hexo-daodao：npm i hexo-daodao --save（加速：cnpm i hexo-daodao --save，前提你安装了cnpm，可以看README）
+    jssrc: https://cdn.staticaly.com/gh/StarWEB890/daodao/main/daodao.js #请将StarWEB890改为你Github的名字，或者你自定义链接
+    url:  #你的vercel部署地址
+    fliter: "['img','iframe']"
+    priority: 10
+    enable: true
+    enable_page: /
+    layout:
+      type: id
+      name: recent-posts
+      index: 0
+    temple_html: '<div class="recent-post-item" style="height: auto;width: 100%"><div class="bbTimeList container" style="height: auto;width: 100%" id="bbTimeList"><i class="bber-gotobb fas fa-bullhorn" onclick="location=&#39;/daodao/&#39;" title="叨叨"></i><div class="swiper-container" id="bbtalk"><div class="swiper-wrapper" id="bber-talk" onclick="location=&#39;/daodao/&#39;"></div></div><i class="bber-gotobb fas fa-arrow-circle-right" onclick="location=&quot;/daodao/&quot;" title="查看全文"></i></div></div>'
+    
 
 
 # 在线聊天（类似在线客服）
@@ -228,13 +251,26 @@ CDN:
   # fontawesome
   fontawesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css
 
-  # Artitalk
-  artitalk: https://unpkg.com/artitalk
+  # 说说
+  shuoshuo:
+    artitalk: https://unpkg.com/artitalk
+    kkapi:
+      css: https://cdn.staticaly.com/gh/StarWEB890/TuChuang/master/npm/ispeak/4.2.0/style.css
+      js: https://cdn.staticaly.com/gh/StarWEB890/TuChuang/master/npm/ispeak/4.2.0/ispeak.umd.js
+      marked: https://cdn.staticfile.org/marked/2.0.0/marked.min.js
+      highlight:
+        css: https://cdn.staticfile.org/highlight.js/10.6.0/styles/atom-one-dark.min.css
+        js: https://cdn.staticfile.org/highlight.js/10.6.0/highlight.min.js
+    daodao:
+      css: https://cdn.staticaly.com/gh/StarWEB890/TuChuang/master/npm/daodao/main.css
+      swiper:
+        css: https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css
+        js: https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js
 
   #评论
   comment:
     twikoo: https://cdn.staticfile.org/twikoo/1.5.11/twikoo.all.min.js
-    discuss: https://lib.baomitu.com/discuss/0.3.8/Discuss.min.js
+    discuss: https://lib.baomitu.com/discuss/latest/dist/discuss.js
     giscus: https://giscus.app/client.js
     waline:
       css: https://unpkg.com/@waline/client@v2/dist/waline.css

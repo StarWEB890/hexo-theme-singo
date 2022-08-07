@@ -1,0 +1,56 @@
+<div id="ispeak"></div>
+<link
+  rel="stylesheet"
+  href="<%= theme.CDN.shuoshuo.kkapi.highlight.css %>"
+/>
+<link
+  rel="stylesheet"
+  href="<%= theme.CDN.shuoshuo.kkapi.css %>"
+/>
+
+<style>
+  #article-container .D-avatar {
+    margin: 0 10px 0 0;
+  }
+  .D-footer {
+    display: none;
+  }
+</style>
+<script src="<%= theme.CDN.shuoshuo.kkapi.highlight.js %>"></script>
+<script src="<%= theme.CDN.shuoshuo.kkapi.marked %>"></script>
+<script src="<%= theme.CDN.comment.discuss %>"></script>
+<script src="<%= theme.CDN.shuoshuo.kkapi.js %>"></script>
+<script>
+function load_ispeak() {
+    setTimeout(function() {
+        var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+        var src = '<%= theme.CDN.shuoshuo.kkapi.js %>'
+        var script = document.createElement('script')
+        script.setAttribute('type','text/javascript')
+        script.onload = function() {
+           pjax_ispeak()
+        }
+        script.setAttribute('src', src)
+        HEAD.appendChild(script)
+    }, 1);
+};
+function pjax_ispeak() {
+    if(!document.querySelectorAll("#ispeak")[0])return;
+    ispeak
+      .init({
+        el: '#ispeak',
+        api: '<%= theme.shuoshuo.kkapi.serverURL %>',
+        author: '<%= theme.shuoshuo.kkapi.author %>',
+        pageSize: 10,
+        loading_img: '<%= theme.shuoshuo.kkapi.loadimg %>',
+        initCommentName: 'Discuss',
+        initCommentOptions: {
+          serverURLs: 'https://kkdiscuss.vercel.app/'
+        }
+      });
+}
+load_ispeak();
+document.addEventListener('pjax:complete', function () {
+    pjax_ispeak();
+});
+</script>
