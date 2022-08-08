@@ -45,7 +45,10 @@ function pjax_ispeak() {
         loading_img: '<%= theme.shuoshuo.kkapi.loadimg %>',
         initCommentName: 'Discuss',
         initCommentOptions: {
-          serverURLs: 'https://kkdiscuss.vercel.app/'
+          serverURLs: '<%= theme.comment.discuss.server_url %>',
+          lang: '<%= theme.comment.discuss.lang %>',
+          ph: '<%= theme.comment.discuss.ph %>',
+          emotMaps: <%- partial('_thirdparty/emoji') %>,
         }
       });
 }

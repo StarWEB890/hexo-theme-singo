@@ -11,7 +11,9 @@
 
 3.保留了之前SinGO主题的风格
 
-4.添加Waline、Gitalk、Twikoo、Giscus、[Discuss](https://discuss.js.org/)评论
+4.添加[Waline](https://waline.js.org/)、[Gitalk](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)、[Twikoo](https://twikoo.js.org)、[Giscus](https://giscus.app/zh-CN)、[Discuss](https://discuss.js.org/)评论
+
+~~（对不起我是SB，我冤枉Waline了，SinGO主题的BUG是我没设置好才导致的！）~~
 
 5.添加网页在线聊天系统
 
