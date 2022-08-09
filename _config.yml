@@ -30,15 +30,9 @@ menu:
   - name: say
     slug: fa-solid fa-note-sticky
     url: /say/
-  - name: about
-    slug: fa-solid fa-address-card
-    url: /about/
   - name: friend
     slug: fa-solid fa-link
     url: /links/
-  - name: update
-    slug: fa-solid fa-calendar
-    url: /update/
 
 # ========================================================================================
 # Sidebar
@@ -102,26 +96,16 @@ music:
 # 再编辑linkavatar（PS：必须是https开头！）
 linkavatar: https://www.xsnetw.cf/images/avatar.jpg
 dalao:
-  - name: SeaYJ
-    link: https://seayj.cn
-    avatar: https://seayj.cn/medias/logo.png
-    info: 追随大佬的脚步越走越远…
-
-  - name: 时过境迁Wayne博客
-    link: https://wr0926.ml
-    avatar: https://cdn.staticaly.com/gh/wayne0926/myphoto@master/img/avatar.jpg
-    info: 以梦为马，不负韶华。
-
-  - name: W4J1e's blog
-    avatar: https://hin.cool/favicon.ico
-    link: https://hin.cool
-    info: 总是偏爱不务正业
+  - name: 名称（如SinGO博客）
+    link: 链接（如：https://www.xsnetw.cf）
+    avatar: 头像链接（如 https://www.xsnetw.cf/images/avatar.jpg）
+    info: 描述：（如：害怕孤独，却享受孤独）
 
 xiaohuoban:
-  - name: 萌！萝莉
-    link: https://loliloli.moe
-    avatar: https://img.cdn.loliloli.net/images/2021/01/11/avatar.jpg
-    info: 一个普通的小博客哦~
+  - name: 名称（如SinGO博客）
+    link: 链接（如：https://www.xsnetw.cf）
+    avatar: 头像链接（如 https://www.xsnetw.cf/images/avatar.jpg）
+    info: 描述：（如：害怕孤独，却享受孤独）
     
 #  - name: 名称（如SinGO博客）
 #    link: 链接（如：https://www.xsnetw.cf）
@@ -137,11 +121,11 @@ comment:
   enable: true # 开启评论功能
   type: waline # 选择评论：discuss | twikoo | gitalk | waline | giscus
   discuss: # Discuss设置：https://discuss.js.org
-    server_url: https://sin-go-discuss.vercel.app #评论服务端地址
+    server_url:  #评论服务端地址
     lang: cn #用于手动设定评论区语言，支持的语言列表 https://discuss.js.org/Quick-Start.html#lang
     ph: 有话想说？ #原名placeholder，评论框占位符，可自定义，默认值与lang有关系
   twikoo: # Twikoo设置：https://twikoo.js.org
-    envId: https://sin-go-twikoo.vercel.app/ # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+    envId:  # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
     region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
     lang: zh-CN #用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
   gitalk: # Gitalk设置：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
@@ -167,7 +151,7 @@ comment:
     lang: 'zh-CN'
   waline: # Waline设置：https://waline.js.org
     # 更多选项 https://waline.js.org/reference/component.html 按照yml格式继续填写即可
-    serverURL: https://wle.xsnetw.cf/
+    serverURL: 
     login: force # disable（关闭登录功能） | enable（开启登录功能） | force（强制登录）
     meta: ['nick', 'mail', 'link'] #（login设置force时此项无效）评论者相关属性。可选值: 'nick', 'mail', 'link'
     requiredMeta: ['nick', 'mail'] #（login设置force时此项无效）设置必填项，默认匿名，可选值: [] 、 ['nick'] 、 ['nick', 'mail']
@@ -189,7 +173,7 @@ comment:
 # 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
 # 申请请到：https://icp.gov.moe/join.php
 # 然后把号码粘贴到这里即可（PS:“萌ICP备”不用加上去！）
-moeicp: 20210071
+moeicp: 
 
 # 不蒜子统计
 # https://busuanzi.ibruce.info
@@ -200,8 +184,8 @@ busuanzi: false
 # 服务端搭建教程：https://www.xsnetw.cf/posts/54175/
 # 把服务端地址复制到下面的“serverURL”就行（后面千万不要“/”!）
 visit_stat:
-  enable: true
-  serverURL: https://sin-go-visit-stat.vercel.app
+  enable: false
+  serverURL: 
 
 # Less
 less:
@@ -212,21 +196,21 @@ pjax: true
 
 # Hexo说说
 shuoshuo:
-  enable: true
+  enable: false
   type: kkapi # 选择一个说说：artitalk | kkapi | daodao
   artitalk: # https://artitalk.js.org/
-    serverURL: https://leanote.xsnetw.ga
+    serverURL: 
     #LeanCloud中国版填绑定的API域名，如果你想使用Artitalk_SafeMode就填写“xxxx.workers.dev域名”
-    appID: 0jueEXr64BGEfOaG5YRW5RRu-MdYXbMMI #LeanCloud APPID（Artitalk_SafeMode可以滚键盘）
-    appKey: 2zmOy8t14Lf0kDSyscbuOVwL #LeanCloud APPKEY（Artitalk_SafeMode可以滚键盘）
+    appID:  #LeanCloud APPID（Artitalk_SafeMode可以滚键盘）
+    appKey:  #LeanCloud APPKEY（Artitalk_SafeMode可以滚键盘）
   kkapi: # https://kkapi.js.org/
-    serverURL: https://sin-go-kkapi-note.vercel.app/ # 部署kkapi地址（记住不是kkapi-open的地址！）
-    author: 62ee0f3e81b6fea7f3dbc59d # 个人id
+    serverURL:  # 部署kkapi地址（记住不是kkapi-open的地址！）
+    author:  # 个人id
     loadimg: https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/images/load.6i582rbr59s0.gif #加载动画
     # kkapi评论使用Discuss，请在上面设置
   daodao_swiper: # 教程：https://blog.xsnetw.cf/posts/25517/
     jssrc: https://cdn.staticaly.com/gh/StarWEB890/daodao/main/daodao.js #请将StarWEB890改为你Github的名字，或者你自定义链接
-    url: https://sin-shuoshuo.vercel.app #你的vercel部署地址
+    url:  #你的vercel部署地址
     fliter: "['img','iframe']"
     priority: 10
     enable: true
@@ -243,13 +227,13 @@ shuoshuo:
 
 #Chatra
 chatra: 
-  enable: true
-  public_key: QP8pJHEonhoChjMN6 #直接复制Public key到此就行
+  enable: false
+  public_key:  #直接复制Public key到此就行
 
 #Daovoice
 daovoice: 
   enable: false
-  app_id: fc15090b #直接复制app_id到此就行
+  app_id:  #直接复制app_id到此就行
 
 # ========================================================================================
 # CDN
@@ -262,8 +246,8 @@ CDN:
   shuoshuo:
     artitalk: https://unpkg.com/artitalk
     kkapi:
-      css: https://cdn.staticaly.com/gh/StarWEB890/TuChuang/master/npm/ispeak/4.2.0/style.css
-      js: https://cdn.staticaly.com/gh/StarWEB890/TuChuang/master/npm/ispeak/4.2.0/ispeak.umd.js
+      css: https://cdn1.tianli0.top/npm/ispeak/style.css
+      js: https://cdn1.tianli0.top/npm/ispeak/ispeak.umd.js
       marked: https://cdn.staticfile.org/marked/2.0.0/marked.min.js
       highlight:
         css: https://cdn.staticfile.org/highlight.js/10.6.0/styles/atom-one-dark.min.css
