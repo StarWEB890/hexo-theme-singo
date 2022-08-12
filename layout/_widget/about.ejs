@@ -1,8 +1,20 @@
 <section class='m_widget about'>
 <% if(theme.avatar) { %>
-<img class='avatar waves-image' style="border-radius: 12px 12px 0 0;" src='<%= url_for(theme.avatar) %>' />
+    <style>
+        .image{
+            box-sizing: border-box;
+width: 250px;
+height: 250px;
+font-size: 22px;
+padding-top: 205px;
+overflow: hidden;
+background: no-repeat center top / 100% 100%;
+background-image: linear-gradient(to top, #FFFFFF, transparent), url("<%= url_for(theme.avatar) %>");
+border-radius: 12px 12px 0 0;
+        }
+</style>
+<div class="image avatar waves-image"><div class='header'><i class="fa fa-user" aria-hidden="true"></i><%=config.author %></div></div>
 <%} %>
-<div class='header'><i class="fa fa-user" aria-hidden="true"></i><%=config.author %></div>
 <div class='content'>
 <div class='desc'><%= config.subtitle%></div>
 </div>

@@ -6,16 +6,16 @@
   <%
     var title = page.title;
     if (is_archive()) {
-      title = 'Archives';
+      title = __('archive.archives');
       if (is_month())
         title += ': ' + page.year + '/' + page.month;
       else if (is_year())
         title += ': ' + page.year;
     }
     else if (is_category())
-      title = 'Category: ' + page.category;
+      title =  __('categories') + ': ' + page.category;
     else if (is_tag())
-      title = 'Tag: ' + page.tag;
+      title =  __('tags') + ': ' + page.tag;
   %>
   <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
   <meta name="description" content="<%= config.description %>" />
@@ -36,6 +36,9 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <% if (theme.CDN.animate){ %>
+    <link href='<%= theme.CDN.animate %>' rel='stylesheet'>
+  <% } %>
   <% if (theme.CDN.fontawesome){ %>
     <link href='<%= theme.CDN.fontawesome %>' rel='stylesheet'>
   <% } %>

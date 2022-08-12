@@ -19,11 +19,8 @@ search:
   # baidu
   baidu_api_id:
 
-# 顶部菜单（PS：后面需要添加斜杠才能保证pjax的正常运行！）
+# 顶部菜单（PS：后面需要添加“/”才能保证pjax的正常运行！）
 menu:
-  - name: home
-    slug: fa-solid fa-house
-    url: /
   - name: archive
     slug: fa-solid fa-box-archive
     url: /archives/
@@ -46,7 +43,7 @@ widgets:
   - links
   - categories
   - tagcloud
-  - qweather
+  - weather
   - music
 
 # 侧边栏头像
@@ -66,9 +63,6 @@ social:
 - name: RSS
   slug: fa-solid fa-square-rss
 	url: /atom.xml
-
-# 侧边天气 KEY（在 https://widget.qweather.com/create-simple 这里创建一个，然后直接复制key到此，当然用我默认的也行，但可能随时失效）
-weather: 42fbe0b777324e8e98785e69a3a69b87
 
 # 侧边音乐播放器
 # 使用APlayer+MetingJS
@@ -94,7 +88,7 @@ music:
 # 友情链接配置：
 # 编辑博客根目录下的“_config.yml”，设置“title”（博客名）、“description”（博客描述）、“url”（博客网址）
 # 再编辑linkavatar（PS：必须是https开头！）
-linkavatar: https://www.xsnetw.cf/images/avatar.jpg
+linkavatar: https://blog.xsnetw.cf/images/avatar.jpg
 dalao:
   - name: 名称（如SinGO博客）
     link: 链接（如：https://www.xsnetw.cf）
@@ -235,12 +229,27 @@ daovoice:
   enable: false
   app_id:  #直接复制app_id到此就行
 
+# 动画效果（请在 https://animate.style/ 选择）
+animate:
+  index: animate__flipInX #首页、分类页、标签页效果
+  archive: animate__bounceIn #归档页效果
+  shuoshuo: animate__lightSpeedInRight #说说页面效果
+  friend:
+    link: animate__bounceInDown #友链页效果
+    comment: animate__bounceInUp #友链页评论区效果
+  post:
+    postani: animate__fadeInDown #页面、文章效果
+    commentani: animate__fadeInUp #评论区效果
+
 # ========================================================================================
 # CDN
 # ========================================================================================
 CDN:
   # fontawesome
   fontawesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css
+
+  # animate.css
+  animate: https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.css
 
   # 说说
   shuoshuo:

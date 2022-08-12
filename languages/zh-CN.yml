@@ -22,6 +22,7 @@ article:
   comments: 评论
 
 archive:
+  archives: 归档
   previous: 上一页
   next: 下一页
 
@@ -38,3 +39,5 @@ footer:
   visitors: 访客人数：
   visitors_hit: 人次
   
+categories: 分类
+tags: 标签

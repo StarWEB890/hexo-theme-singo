@@ -22,6 +22,7 @@ article:
   comments: Comments
 
 archive:
+  archives: Archives
   previous: Previous
   next: Next
 
@@ -37,3 +38,6 @@ footer:
 
   visitors: Number of visitors：
   visitors_hit: hits
+
+categories: Category
+tags: Tag

@@ -211,7 +211,7 @@ var customSearch;
 		// getPicture();
 
 
-		$(".article .video-container").fitVids();
+		$(".video-container").fitVids();
 
 		setTimeout(function () {
 			$('#loading-bar-wrapper').fadeOut(500);

@@ -53,7 +53,6 @@
         color: darken(@accent-color, 2%);
         &:hover {
             color: darken(@accent-color, 3%);
-            background: #8eebe3;
         }
         &:active {
             background: fade(@accent-color, 20%);
@@ -127,26 +126,244 @@
         font-size: 1.2rem;
         margin-top: @gap;
         text-align: center;
-        a {
-            border: 2px solid #555;
-            border-radius: 2px;
-            color: #555;
-            display: inline-block;
-            font-size: 14px;
-            line-height: 2;
-            padding: 0 20px;
-            transition: background-color 0.2s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .mores {
+            --hue: 121;
+            position: relative;
+            padding: 5px 10px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: hsl(var(--hue), 100%, 41%);
+            outline: transparent;
+            overflow: hidden;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            transition: 0.25s;
+          
             &:hover {
-                background: #222;
-                border-color: #222;
-                color: #fff;
+              background: hsl(var(--hue), 100%, 31%);
             }
-            &:active {
-                background: fade(@accent-color, 20%);
-                color: @white;
-                backdrop-filter: blur(10px);
+          
+            &-primary {
+              --hue: 187;
             }
-        }
+          
+            &-ghost {
+              color: hsl(var(--hue), 100%, 41%);
+              background-color: transparent;
+              border-color: hsl(var(--hue), 100%, 41%);
+          
+              &:hover {
+                color: white;
+              }
+            }
+          
+            &-shine {
+          
+              &::before {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                  120deg,
+                  transparent,
+                  hsla(var(--hue), 100%, 41%, 0.5),
+                  transparent
+                );
+                transform: translateX(-100%);
+                transition: 0.6s;
+              }
+          
+              &:hover {
+                background: hsl(var(--hue), 100%, 41%);
+                box-shadow: 0 0 20px 10px hsla(var(--hue), 100%, 41%, 0.5);
+              }
+          
+              &:hover::before {
+                transform: translateX(100%);
+              }
+            }
+          }
+          .light {
+
+            position: relative;
+          
+          
+            color: #6495ED;
+          
+          
+            text-transform: uppercase;
+          
+            transition: 0.5s;
+          
+            cursor: pointer;
+          
+            overflow: hidden;
+          
+          }
+          
+          .light:hover {
+          
+            background-color: #6495ED;
+          
+            color: #050801;
+          
+            box-shadow: 0 0 5px #6495ED,
+          
+                        0 0 25px #6495ED,
+          
+                        0 0 50px #6495ED,
+          
+                        0 0 200px #6495ED;
+          
+          }
+          
+          .light div {
+          
+            position: absolute;
+          
+          }
+          
+          .light div:nth-child(1){
+          
+            width: 100%;
+          
+            height: 2px;
+          
+            top: 0;
+          
+            left: -100%;
+          
+            background: linear-gradient(to right,transparent,#6495ED);
+          
+            animation: animate1 1s linear infinite;
+          
+          }
+          
+          .light div:nth-child(2){
+          
+            width: 2px;
+          
+            height: 100%;
+          
+            top: -100%;
+          
+            right: 0;
+          
+            background: linear-gradient(to bottom,transparent,#6495ED);
+          
+            animation: animate2 1s linear infinite;
+          
+            animation-delay: 0.25s;
+          
+          }
+          
+          .light div:nth-child(3){
+          
+            width: 100%;
+          
+            height: 2px;
+          
+            bottom: 0;
+          
+            right: -100%;
+          
+            background: linear-gradient(to left,transparent,#6495ED);
+          
+            animation: animate3 1s linear infinite;
+          
+            animation-delay: 0.5s;
+          
+          }
+          
+          .light div:nth-child(4){
+          
+            width: 2px;
+          
+            height: 100%;
+          
+            bottom: -100%;
+          
+            left: 0;
+          
+            background: linear-gradient(to top,transparent,#6495ED);
+          
+            animation: animate4 1s linear infinite;
+          
+            animation-delay: 0.75s;
+          
+          }
+          
+          @keyframes animate1 {
+          
+            0% {
+          
+              left: -100%;
+          
+            }
+          
+            50%,100% {
+          
+              left: 100%;
+          
+            }
+          
+          }
+          
+          @keyframes animate2 {
+          
+            0% {
+          
+              top: -100%;
+          
+            }
+          
+            50%,100% {
+          
+              top: 100%;
+          
+            }
+          
+          }
+          
+          @keyframes animate3 {
+          
+            0% {
+          
+              right: -100%;
+          
+            }
+          
+            50%,100% {
+          
+              right: 100%;
+          
+            }
+          
+          }
+          
+          @keyframes animate4 {
+          
+            0% {
+              bottom: -100%;
+            }
+          
+            50%,100% {
+          
+              bottom: 100%;
+          
+            }
+          
+          }
     }
     .tags {
         position: relative;

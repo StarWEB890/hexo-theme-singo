@@ -1,0 +1,99 @@
+.demo {
+    display: inline-block;
+    width: auto;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .friendimage{
+    position: absolute;width: 100%;height: 100%;
+  }
+  /* imghvr-blur
+   ----------------------------- */
+.imghvr-blur figcaption {
+  opacity: 0;
+}
+
+.imghvr-blur:hover > img {
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+}
+
+.imghvr-blur:hover figcaption {
+  opacity: 1;
+  transition-delay: 0.21s;
+}
+[class^="imghvr-"],
+[class*=" imghvr-"] {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
+    background-color: #2266a5;
+    color: #fff;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+}
+
+[class^="imghvr-"] > img,
+[class*=" imghvr-"] > img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+[class^="imghvr-"] figcaption,
+[class*=" imghvr-"] figcaption {
+    background-color: #135796;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #ffffff;
+}
+
+[class^="imghvr-"] figcaption h1,
+[class^="imghvr-"] figcaption h2,
+[class^="imghvr-"] figcaption h3,
+[class^="imghvr-"] figcaption h4,
+[class^="imghvr-"] figcaption h5,
+[class^="imghvr-"] figcaption h6,
+[class*=" imghvr-"] figcaption h1,
+[class*=" imghvr-"] figcaption h2,
+[class*=" imghvr-"] figcaption h3,
+[class*=" imghvr-"] figcaption h4,
+[class*=" imghvr-"] figcaption h5,
+[class*=" imghvr-"] figcaption h6 {
+    color: #ffffff;
+}
+
+[class^="imghvr-"] a,
+[class*=" imghvr-"] a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+[class^="imghvr-"],
+[class*=" imghvr-"],
+[class^="imghvr-"]:before,
+[class^="imghvr-"]:after,
+[class*=" imghvr-"]:before,
+[class*=" imghvr-"]:after,
+[class^="imghvr-"] *,
+[class*=" imghvr-"] *,
+[class^="imghvr-"] *:before,
+[class^="imghvr-"] *:after,
+[class*=" imghvr-"] *:before,
+[class*=" imghvr-"] *:after {
+    box-sizing: border-box;
+    transition: all 0.35s ease;
+}

@@ -1,5 +1,5 @@
 <article id="<%= post.layout %>-<%= post.slug %>"
-  class="animated rubberBand slideInRight post white-box article-type-<%= post.layout %>"
+  class="animate__animated <%= theme.animate.post.postani %> post white-box article-type-<%= post.layout %>"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
@@ -41,7 +41,7 @@
 	</section>
 </article>
 <% if (post.comments && theme.comment.enable){ %>
-	<article class="animated rubberBand slideInRight " style="backdrop-filter: blur(20px);box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);margin:15px 0 0 0;padding:11px;background-color:rgba(255, 255, 255, 0.8);border-radius: 20px;">
+	<article class="animate__animated <%= theme.animate.post.commentani %>" style="backdrop-filter: blur(20px);box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);margin:15px 0 0 0;padding:11px;background-color:rgba(255, 255, 255, 0.8);border-radius: 20px;">
 	<h2 style="position: relative;font-family: 'Titillium Web', Helvetica, 'Hiragino Sans GB', 'Hiragino Sans GB W3', Source Han Sans CN Regular, WenQuanYi Micro Hei, 'Microsoft YaHei', Arial, sans-serif;font-weight: normal;margin: 20px auto 20px;left: 3px;">
 		<i class="fa fa-comment" aria-hidden="true" style="color: #4caf50;"></i>
 		<%- __('article.comments') %>

@@ -1,10 +1,4 @@
-<article class="animated rubberBand slideInRight  post reveal<%= (post.title) ? "" : "no-title" %>" style="visibility: visible;
-  -webkit-transform: scale(1);
-  opacity: 1;
-  transform: scale(1);
-  opacity: 1;
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
-  transition: transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;">
+<article class="animate__animated <%= theme.animate.index %>  post reveal<%= (post.title) ? "" : "no-title" %>" >
   <section class="meta">
     <% if (post.title) { %>
     <h2 class="title">
@@ -23,7 +17,16 @@
 
     <% if (post.excerpt) { %>
 	  <div class="readmore">
-      <a href="<%- url_for(post.path) %>"><%- __('article.readmore') %></a>
+      <a href="<%- url_for(post.path) %>" class="mores mores-primary mores-ghost mores-shine light">
+        <div></div>
+
+        <div></div>
+    
+        <div></div>
+    
+        <div></div>
+        <%- __('article.readmore') %>
+      </a>
     </div>
     <% } %>
     

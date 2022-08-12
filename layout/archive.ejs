@@ -1,11 +1,11 @@
 <% if (page.year || page.month) { %>
 	<%- partial('_partial/archive') %>
 <% } else { %>
-  <article id="archive-page" class="archives-wrap animated rubberBand post article white-box">
+  <article id="archive-page" class="archives-wrap animate__animated <%= theme.animate.archive %> post article white-box">
     <section class='meta'>
       <h2 class="title">
         <a href="javascript:void(0)">
-          Archives
+          <%- __('archive.archives') %>
         </a>
       </h2>
     </section>
