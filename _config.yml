@@ -94,17 +94,20 @@ dalao:
     link: 链接（如：https://www.xsnetw.cf）
     avatar: 头像链接（如 https://www.xsnetw.cf/images/avatar.jpg）
     info: 描述：（如：害怕孤独，却享受孤独）
+    color: rgb(0,139,139)
 
 xiaohuoban:
   - name: 名称（如SinGO博客）
     link: 链接（如：https://www.xsnetw.cf）
     avatar: 头像链接（如 https://www.xsnetw.cf/images/avatar.jpg）
     info: 描述：（如：害怕孤独，却享受孤独）
-    
+    color: rgb(0,139,139)
+
 #  - name: 名称（如SinGO博客）
 #    link: 链接（如：https://www.xsnetw.cf）
 #    avatar: 头像链接（如 https://www.xsnetw.cf/images/avatar.jpg）
-#    info: 描述：（如：害怕孤独，却享受孤独）
+#    info: 描述（如：害怕孤独，却享受孤独）
+#    color: 颜色（示例：“rgb(0,139,139)”）
 
 # ========================================================================================
 # 附加功能
@@ -240,6 +243,11 @@ animate:
   post:
     postani: animate__fadeInDown #页面、文章效果
     commentani: animate__fadeInUp #评论区效果
+
+# 自定义末尾右侧
+footer_right: "<a href=\"https://travellings.netlify.app/\" target=\"_blank\" rel=\"noopener\" title=\"开往-友链接力\">
+    <img src=\"https://jsd.xsnetw.tk/gh/travellings-link/travellings/assets/logo.gif\" alt=\"开往-友链接力\" width=\"120\">
+</a>"
 
 # ========================================================================================
 # CDN
