@@ -42,6 +42,11 @@
   <% if (theme.CDN.fontawesome){ %>
     <link href='<%= theme.CDN.fontawesome %>' rel='stylesheet'>
   <% } %>
+  <% if (theme.katex){ %>
+    <link href='<%= theme.CDN.katex.css %>' rel='stylesheet'>
+    <script src="<%= theme.CDN.katex.js %>"></script>
+    <script src="<%= theme.CDN.katex.rander %>"></script>
+  <% } %>
   <%- css('style.css') %>
   <script>
     function setLoadingBarProgress(num) {

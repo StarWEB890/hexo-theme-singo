@@ -152,15 +152,16 @@ comment:
     login: force # disable（关闭登录功能） | enable（开启登录功能） | force（强制登录）
     meta: ['nick', 'mail', 'link'] #（login设置force时此项无效）评论者相关属性。可选值: 'nick', 'mail', 'link'
     requiredMeta: ['nick', 'mail'] #（login设置force时此项无效）设置必填项，默认匿名，可选值: [] 、 ['nick'] 、 ['nick', 'mail']
+    lang: zh-CN
     emoji: [
     '//unpkg.com/@waline/emojis@1.0.1/weibo',
     'https://emoji.shojo.cn/bili/src/小黄脸',
     '//unpkg.com/@waline/emojis@1.0.1/bilibili',
-    'https://emoji.shojo.cn/bili/src/进击的冰糖',
-    'https://emoji.shojo.cn/bili/src/冰糖IO 蜕变·闪耀',
     'https://emoji.shojo.cn/bili/src/枕边童话',
     'https://emoji.shojo.cn/bili/src/咩栗',
     'https://emoji.shojo.cn/bili/src/呜米',
+    'https://emoji.shojo.cn/bili/src/进击的冰糖',
+    'https://emoji.shojo.cn/bili/src/冰糖IO 蜕变·闪耀',
     'https://emoji.shojo.cn/bili/src/多多poi',
     'https://emoji.shojo.cn/bili/src/穆小泠',
     'https://emoji.shojo.cn/bili/src/早稻叽',
@@ -190,6 +191,9 @@ less:
 
 # Pjax
 pjax: true
+
+# KaTex
+katex: true
 
 # Hexo说说
 shuoshuo:
@@ -249,6 +253,8 @@ footer_right: "<a href=\"https://travellings.netlify.app/\" target=\"_blank\" re
     <img src=\"https://jsd.xsnetw.tk/gh/travellings-link/travellings/assets/logo.gif\" alt=\"开往-友链接力\" width=\"120\">
 </a>"
 
+
+
 # ========================================================================================
 # CDN
 # ========================================================================================
@@ -258,6 +264,12 @@ CDN:
 
   # animate.css
   animate: https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.css
+
+  # katex
+  katex:
+    css: https://jsd.xsnetw.tk/npm/katex/dist/katex.min.css
+    js: https://jsd.xsnetw.tk/npm/katex/dist/katex.min.js
+    rander: https://jsd.xsnetw.tk/npm/katex/dist/contrib/auto-render.min.js
 
   # 说说
   shuoshuo:
