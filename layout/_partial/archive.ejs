@@ -22,13 +22,13 @@
 <% if (page.total > 1) { %>
   <nav id="page-nav">
     <% if (page.prev != 0) { %>
-    <a class="prev" rel="prev" href="<%= url_for(page.prev_link) %>">
+    <a class="prev navs233 navs233-primary navs233-ghost navs233-shine" rel="prev" href="<%= url_for(page.prev_link) %>">
       <span class="icon icon-chevron-left"></span>
       <span class="text"><%- __('archive.previous') %></span>
     </a>
     <% } %>
     <% if (page.next != 0) { %>
-    <a class="next" rel="next" href="<%= url_for(page.next_link) %>">
+    <a class="next navs233 navs233-primary navs233-ghost navs233-shine" rel="next" href="<%= url_for(page.next_link) %>">
       <span class="text"><%- __('archive.next') %></span>
       <span class="icon icon-chevron-right"></span>
     </a>

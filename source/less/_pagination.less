@@ -3,7 +3,7 @@
 #page-nav {
 	position: relative;
 	width: 100%;
-	padding: 20px 0px;
+	padding: 0px 20px;
 	
 	.page-number,
 	.space {
@@ -13,12 +13,11 @@
 	.prev {
 		font-size: 0.8125em;
 		font-weight: normal;
-		color: lighten(@black, 40%);
+		color: #111;
 		border-radius: 2px;
-		
-		&:hover {
-			color: @black;
-		}
+		backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
 		span {
 			line-height: 20px;
 			vertical-align: middle;
@@ -29,12 +28,76 @@
 			}
 		}
 	}
+	.navs233 {
+		--hue: 121;
+		position: relative;
+		padding: 5px 10px;
+		font-size: 1rem;
+		line-height: 1.5;
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		background-color: hsl(var(--hue), 100%, 41%);
+		outline: transparent;
+		overflow: hidden;
+		cursor: pointer;
+		user-select: none;
+		white-space: nowrap;
+		transition: 0.25s;
+	  
+		&:hover {
+		  background: hsl(var(--hue), 100%, 31%);
+		}
+	  
+		&-primary {
+		  --hue: 187;
+		}
+	  
+		&-ghost {
+		  color: hsl(var(--hue), 100%, 41%);
+		  background: rgba(255, 255, 255, 0.7);
+		  border-color: hsl(var(--hue), 100%, 41%);
+	  
+		  &:hover {
+			color: white;
+		  }
+		}
+	  
+		&-shine {
+	  
+		  &::before {
+			position: absolute;
+			content: "";
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(
+			  120deg,
+			  transparent,
+			  hsla(var(--hue), 100%, 41%, 0.5),
+			  transparent
+			);
+			transform: translateX(-100%);
+			transition: 0.6s;
+		  }
+	  
+		  &:hover {
+			background: hsl(var(--hue), 100%, 41%);
+			box-shadow: 0 0 20px 10px hsla(var(--hue), 100%, 41%, 0.5);
+		  }
+	  
+		  &:hover::before {
+			transform: translateX(100%);
+		  }
+		}
+	  }
 	.next {
   	float: right;
-  	padding: 0 7px 2px 10px;
+  	padding: 5px 12px 7px 15px;
 	}
 	.prev {
   	float: left;
-  	padding: 0 10px 2px 7px;
+  	padding: 5px 15px 7px 12px;
 	}
 }

@@ -67,7 +67,16 @@
       <i class="fa fa-eye"></i> <%- __('footer.visitors') %><span id="vs_site_uv">0</span>&nbsp;<%- __('footer.visitors_hit') %>
     <br>
     <% } %>
-    Powered by <a href="https://hexo.io">Hexo</a> | Themes <a href="https://github.com/StarWEB890/hexo-theme-singo">SinGO</a>
+    Powered by <a href="https://hexo.io">Hexo</a> 
+    <% if (theme.hosted_by.name){ %>
+       | Hosted by 
+       <% if (theme.hosted_by.link){ %>
+        <a href="<%= theme.hosted_by.link %>">  
+       <% } %>
+       <%= theme.hosted_by.name %>
+       <% if (theme.hosted_by.link){ %></a> <% } %>
+    <% } %>
+        | Themes <a href="https://github.com/StarWEB890/hexo-theme-singo">SinGO</a>
     </div>
 
     <% if (theme.footer_right){ %>

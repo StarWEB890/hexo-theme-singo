@@ -82,6 +82,37 @@ music:
   hideLrc: false     # 隐藏歌词
 
 # ========================================================================================
+# Footer
+# ========================================================================================
+
+# 末尾添加：博客部署位置
+hosted_by: 
+  name: Vercel #部署在哪,例如Github Pages、Vercel、Coding等
+  link: https://vercel.com/ #对应链接
+
+# 自定义末尾
+footer_right: "<a href=\"https://travellings.cn\" target=\"_blank\" rel=\"noopener\" title=\"开往-友链接力\">
+    <img src=\"https://travellings.cn/assets/logo.gif\" alt=\"开往-友链接力\" width=\"120\">
+</a>"
+
+# 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
+# 申请请到：https://icp.gov.moe/join.php
+# 然后把号码粘贴到这里即可（PS:“萌ICP备”不用加上去！）
+moeicp: 
+
+# 不蒜子统计
+# https://busuanzi.ibruce.info
+busuanzi: true
+
+# Visit-Stat统计
+# https://github.com/Lete114/Visit-Stat
+# 服务端搭建教程：https://www.xsnetw.cf/posts/54175/
+# 把服务端地址复制到下面的“serverURL”就行（后面千万不要“/”!）
+visit_stat:
+  enable: false
+  serverURL: 
+
+# ========================================================================================
 # 友情链接
 # ========================================================================================
 
@@ -167,24 +198,6 @@ comment:
     'https://emoji.shojo.cn/bili/src/早稻叽',
     ]
 
-
-# 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
-# 申请请到：https://icp.gov.moe/join.php
-# 然后把号码粘贴到这里即可（PS:“萌ICP备”不用加上去！）
-moeicp: 
-
-# 不蒜子统计
-# https://busuanzi.ibruce.info
-busuanzi: false
-
-# Visit-Stat统计
-# https://github.com/Lete114/Visit-Stat
-# 服务端搭建教程：https://www.xsnetw.cf/posts/54175/
-# 把服务端地址复制到下面的“serverURL”就行（后面千万不要“/”!）
-visit_stat:
-  enable: false
-  serverURL: 
-
 # Less
 less:
   compress: true
@@ -247,13 +260,6 @@ animate:
   post:
     postani: animate__fadeInDown #页面、文章效果
     commentani: animate__fadeInUp #评论区效果
-
-# 自定义末尾右侧
-footer_right: "<a href=\"https://travellings.netlify.app/\" target=\"_blank\" rel=\"noopener\" title=\"开往-友链接力\">
-    <img src=\"https://jsd.xsnetw.tk/gh/travellings-link/travellings/assets/logo.gif\" alt=\"开往-友链接力\" width=\"120\">
-</a>"
-
-
 
 # ========================================================================================
 # CDN
