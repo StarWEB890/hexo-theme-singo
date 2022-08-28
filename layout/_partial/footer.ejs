@@ -1,17 +1,46 @@
+<div id="hitokoto" class="footermar">
+  <p id="hitokoto_text" class="hitokoto">
+    :D 获取中...
+  </p>
+  <script>
+    fetch('https://v1.hitokoto.cn')
+      .then(response => response.json())
+      .then(data => {
+        const hitokoto = document.getElementById('hitokoto_text')
+        hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+        hitokoto.innerText = data.hitokoto + "【" + data.from + "】"
+      })
+      .catch(console.error)
+  </script>
+</div>
 <footer id="footer" class="clearfix">
-  <div>
+  <div class="footer-left">
     Copyright &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>. All Rights Reserved.<br>
+
     <% if (theme.moeicp){ %>
-      <a href="https://icp.gov.moe/?keyword=<%= theme.moeicp %>" target="_blank">萌ICP备<%= theme.moeicp %>号</a>
+      <a href="https://icp.gov.moe/?keyword=<%= theme.moeicp %>" target="_blank"><%- __('footer.moeicp',theme.moeicp) %></a><br>
+    <% } %>
+    <% if (theme.furryicp){ %>
+      <a href="https://www.furgov.cn/index.html?query=<%= theme.furryicp %>" target="_blank"><%- __('footer.furryicp',theme.furryicp) %></a><br>
+    <% } %>
+
+    <% if (theme.icpbeian){ %>
+      <a href="https://beian.miit.gov.cn/" target="_blank"><%= theme.icpbeian %></a>
       <br>
     <% } %>
+
+    <% if (theme.gongan.enable){ %>
+      <a href="https://beian.miit.gov.cn/" target="_blank"><%= theme.icpbeian %></a>
+      <br>
+    <% } %>
+
     <% if (theme.busuanzi){ %>
       <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
       <span id="busuanzi_container_site_pv">
-        <i class="fa fa-user"></i> <%- __('footer.total') %>：<span id="busuanzi_value_site_pv"></span>&nbsp;<%- __('footer.total_hit') %>
+        <i class="fa fa-user"></i> <%- __('footer.total','<span id="busuanzi_value_site_pv"></span>&nbsp;') %>
     </span> |
     <span id="busuanzi_container_site_uv">
-      <i class="fa fa-eye"></i> <%- __('footer.visitors') %><span id="busuanzi_value_site_uv"></span>&nbsp;<%- __('footer.visitors_hit') %>
+      <i class="fa fa-eye"></i> <%- __('footer.visitors','<span id="busuanzi_value_site_uv"></span>&nbsp;') %>
     </span>
     <br>
     <% } %>
@@ -62,29 +91,26 @@
 
 })();
       </script>
-        <i class="fa fa-user"></i> <%- __('footer.total') %>：<span id="vs_site_pv">0</span>&nbsp;<%- __('footer.total_hit') %>
+        <i class="fa fa-user"></i> <%- __('footer.total','<span id="vs_site_pv">0</span>&nbsp;') %>
          |
-      <i class="fa fa-eye"></i> <%- __('footer.visitors') %><span id="vs_site_uv">0</span>&nbsp;<%- __('footer.visitors_hit') %>
+      <i class="fa fa-eye"></i> <%- __('footer.visitors','<span id="vs_site_uv">0</span>&nbsp;') %>
     <br>
     <% } %>
-    Powered by <a href="https://hexo.io">Hexo</a> 
+    <%- __('footer.powered','<a href="https://hexo.io">Hexo</a>') %>
     <% if (theme.hosted_by.name){ %>
-       | Hosted by 
+       | <%- __('footer.hosted') %> 
        <% if (theme.hosted_by.link){ %>
         <a href="<%= theme.hosted_by.link %>">  
        <% } %>
        <%= theme.hosted_by.name %>
        <% if (theme.hosted_by.link){ %></a> <% } %>
     <% } %>
-        | Themes <a href="https://github.com/StarWEB890/hexo-theme-singo">SinGO</a>
+        | <%- __('footer.theme') %> <a href="https://github.com/StarWEB890/hexo-theme-singo">SinGO</a>
     </div>
 
-    <% if (theme.footer_right){ %>
-    <div>
+    
+    <div class="footer-right">
       <%- theme.footer_right %>
-      <br>
-      <br>
       </div>
-      <% } %>
 </footer>
 

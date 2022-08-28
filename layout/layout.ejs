@@ -1,9 +1,7 @@
 <%- partial('_partial/head') %>
-<body>
+<body style="background-image: url(<%= theme.background %>);">
   <%- partial('_partial/loading') %>
-  <script>setLoadingBarProgress(20)</script> 
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-    <script>setLoadingBarProgress(40);</script>
   <div class="l_body">
     <div class='container clearfix'>
       <div id="pjax-container" class='l_main'>
@@ -12,12 +10,12 @@
       <aside class='l_side'>
         <%- partial('_partial/side') %>
       </aside>
-      <script>setLoadingBarProgress(60);</script>
     </div>
   </div>
   <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
-  <script>setLoadingBarProgress(80);</script>
   <%- partial('_partial/scripts') %>
-  <script>setLoadingBarProgress(100);</script>
+  <% if (theme.canvas.enable) { %>
+  <script type="text/javascript" color="<%= theme.canvas.color %>" opacity="0.5" count="99" src="<%= theme.CDN.canvasnest %>"></script>
+  <% } %>
 </body>
 </html>

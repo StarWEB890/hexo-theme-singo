@@ -1,4 +1,17 @@
 # ========================================================================================
+# Body
+# ========================================================================================
+# 背景
+background: https://www.dmoe.cc/random.php
+
+# Canvas-Nest
+canvas:
+  enable: true
+  color: rgb(85,85,85)
+
+# 毛玻璃效果（可能会造成卡顿！）
+glass: false
+# ========================================================================================
 # Header
 # ========================================================================================
 # 搜索选择
@@ -91,14 +104,30 @@ hosted_by:
   link: https://vercel.com/ #对应链接
 
 # 自定义末尾
-footer_right: "<a href=\"https://travellings.cn\" target=\"_blank\" rel=\"noopener\" title=\"开往-友链接力\">
+footer_right: "<a href=\"https://travellings.cn\" target=\"_blank\" class=\"menu-item-travelling\" rel=\"noopener\" title=\"开往-友链接力\">
     <img src=\"https://travellings.cn/assets/logo.gif\" alt=\"开往-友链接力\" width=\"120\">
 </a>"
 
-# 萌ICP备案（仅提供萌站长交流！不是真正的中国备案！）
+# 萌ICP备案（不是真正的中国备案！）
 # 申请请到：https://icp.gov.moe/join.php
 # 然后把号码粘贴到这里即可（PS:“萌ICP备”不用加上去！）
 moeicp: 
+
+# 兽圈专属ICP备案系统（是真正的中国备案！）（福瑞控狂喜 | doge）
+# 申请请到：https://www.furgov.cn/
+# 然后把号码粘贴到这里即可（PS:“兽ICP备”不用加上去！）
+furryicp:
+
+# ICP备案（真正的中国备案）
+# 直接填 “XICP备xxxxxxxx号”（例如：“粤ICP备xxxxxxxx号-x”）
+# （前提是你的网站有经过ICP备案！！）
+icpbeian:
+
+# 公安网备案
+gongan:
+  enable:
+  code:  #备案号
+  type:  #显示备案信息
 
 # 不蒜子统计
 # https://busuanzi.ibruce.info
@@ -119,7 +148,7 @@ visit_stat:
 # 友情链接配置：
 # 编辑博客根目录下的“_config.yml”，设置“title”（博客名）、“description”（博客描述）、“url”（博客网址）
 # 再编辑linkavatar（PS：必须是https开头！）
-linkavatar: https://blog.xsnetw.cf/images/avatar.jpg
+linkavatar: https://cdn.xsnetw.cf/SinGo/images/avatar.jpg
 dalao:
   - name: 名称（如SinGO博客）
     link: 链接（如：https://www.xsnetw.cf）
@@ -261,10 +290,30 @@ animate:
     postani: animate__fadeInDown #页面、文章效果
     commentani: animate__fadeInUp #评论区效果
 
+# 版权信息
+copyright:
+    enable: true
+
+# Live2D
+live2d:
+  enable: false
+  api: https://live2d.bobo.now.cc/
+
 # ========================================================================================
 # CDN
 # ========================================================================================
 CDN:
+  # 自定义SinGO主题css，建议不填（有镜像的可以填）
+  css: 
+  # 自定义SinGO主题js，建议不填（有镜像的可以填）
+  js:
+    jqueryfitvids: 
+    app: 
+    search: 
+
+  #canvas
+  canvasnest: https://cdn.bootcdn.net/ajax/libs/canvas-nest.js/2.0.4/canvas-nest.js
+
   # fontawesome
   fontawesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css
 
@@ -273,9 +322,9 @@ CDN:
 
   # katex
   katex:
-    css: https://jsd.xsnetw.tk/npm/katex/dist/katex.min.css
-    js: https://jsd.xsnetw.tk/npm/katex/dist/katex.min.js
-    rander: https://jsd.xsnetw.tk/npm/katex/dist/contrib/auto-render.min.js
+    css: https://cdn.bobo.now.cc/npm/katex/dist/katex.min.css
+    js: https://cdn.bobo.now.cc/npm/katex/dist/katex.min.js
+    rander: https://cdn.bobo.now.cc/npm/katex/dist/contrib/auto-render.min.js
 
   # 说说
   shuoshuo:
@@ -288,7 +337,7 @@ CDN:
         css: https://cdn.staticfile.org/highlight.js/10.6.0/styles/atom-one-dark.min.css
         js: https://cdn.staticfile.org/highlight.js/10.6.0/highlight.min.js
     daodao:
-      css: https://cdn.staticaly.com/gh/StarWEB890/TuChuang/master/npm/daodao/main.css
+      css: https://cdn.bobo.now.cc/gh/StarWEB890/TuChuang/npm/daodao/main.css
       swiper:
         css: https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css
         js: https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js

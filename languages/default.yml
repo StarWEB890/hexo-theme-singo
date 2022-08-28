@@ -34,11 +34,20 @@ sidebar:
   time: Time
 
 footer:
-  total: Total
-  total_hit: views.
-
-  visitors: Number of visitors：
-  visitors_hit: hits
+  moeicp: Moeicp Code. %s
+  furryicp: Furicp Code. %s
+  total: Total %s views.
+  visitors: Number of visitors：%s hits
+  powered: Powered by %s
+  hosted: Hosted by 
+  theme: Theme
 
 categories: Category
 tags: Tag
+
+copyright:
+    author: "Post author: "
+    link: "Post link: "
+    license_title: "Copyright Notice: "
+    left_license_content: "All articles in this blog are licensed under "
+    right_license_content: "unless stating additionally."

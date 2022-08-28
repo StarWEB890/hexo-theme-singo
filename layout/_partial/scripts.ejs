@@ -1,22 +1,10 @@
-<% if (config.disqus_shortname){ %>
-<script>
-  var disqus_shortname = '<%= config.disqus_shortname %>';
-  <% if (page.permalink){ %>
-  var disqus_url = '<%= page.permalink %>';
-  <% } %>
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<% } %>
-
 <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
-<%- js('js/jquery.fitvids.js') %>
+<% if (theme.CDN.js.jqueryfitvids){ %>
+  <script src="<%= theme.CDN.js.jqueryfitvids %>"></script>
+  <% } else { %>
+    <%- js('js/jquery.fitvids.js') %>
+  <% } %>
 <script>
 	var GOOGLE_CUSTOM_SEARCH_API_KEY = "<%- theme.search.google_api_key %>";
 	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "<%- theme.search.google_engine_id %>";
@@ -31,6 +19,17 @@
   var ROOT = "<%- config.root %>"||"/";
   if(!ROOT.endsWith('/'))ROOT += '/';
 </script>
-<%- js('js/search.js') %>
-<%- js('js/app.js') %>
+<% if (theme.CDN.js.search){ %>
+  <script src="<%= theme.CDN.js.search %>"></script>
+  <% } else { %>
+    <%- js('js/search.js') %>
+  <% } %>
+  <% if (theme.CDN.js.app){ %>
+    <script src="<%= theme.CDN.js.app %>"></script>
+    <% } else { %>
+      <%- js('js/app.js') %>
+    <% } %>
+    <% if (theme.live2d.enable){ %>
+      <%- partial('_thirdparty/live2d') %>
+      <% } %>
 

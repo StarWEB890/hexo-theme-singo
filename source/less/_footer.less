@@ -1,3 +1,30 @@
+.footermar {
+	width: 100%;
+	background-color: rgba(65,65,65,0.9);
+	white-space: nowrap;
+	overflow: hidden;
+	color: @white;
+}
+.hitokoto {
+	position: relative;
+	width: fit-content;
+	animation:move 25s linear infinite;
+				padding-left:100%;
+}
+.hitokoto::after{
+	position: absolute; 
+	right:-100%;
+	content:attr(text);
+}
+
+@keyframes move {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
 #footer {
   padding: 20px;
   width: 100%;
@@ -7,42 +34,20 @@
   overflow: hidden;
   text-align: center;
 	background-color: rgba(65,65,65,0.8);
-	.codename {
-		color: @secondary-color;
+	a {
+		color: fade(@white,80%);
+	
+		&:hover {
+		  background: fade(@accent-color, 10%);
+		  color: darken(@accent-color, 3%);
+		}
+	  }
+	.footer-left{
+		text-align: left;
+    display: inline;
+    float: left;
 	}
-	.social-wrapper {
-		padding-top: 20px;
+	.footer-right{
+		text-align: right;
 	}
-  a {
-    color: fade(@white,80%);
-
-    &:hover {
-      background: fade(@accent-color, 10%);
-      color: darken(@accent-color, 3%);
-    }
-    &.social {
-	    position: relative;
-	    display: inline-block;
-	    text-align: center;
-	    font-size: 16px;
-	    margin: 0px 5px;
-
-	  	&:hover {
-		  	background: transparent;
-		  	color: @accent-color;
-	  	}
-	  	&.github:hover {
-		  	color: @github-color;
-	  	}
-	  	&.google:hover {
-		  	color: @google-color;
-	  	}
-	  	&.twitter:hover {
-		  	color: @twitter-color;
-	  	}
-	  	&.weibo:hover {
-		  	color: @weibo-color;
-	  	}
-    }
-  }
 }

@@ -7,7 +7,7 @@
 			<div class='menu'>
 				<ul class='h-list'>
 					<% (theme.menu||[]).forEach(function(value){ %>
-						<li>
+						<li class="menu-item-<%=value.name%>">
 							<a class='flat-box nav btn btn-primary btn-ghost btn-shine' href='<%=url_for(value.url)%>'>
 								<i class="<%=value.slug%>" aria-hidden="true"></i>&nbsp;
 								<%- __('header.' + value.name) %>
@@ -17,8 +17,8 @@
 				</ul>
 			</div>
 			<% if (theme.search.enable === true) { %>
-				<div class="m_search">
-					<form name="searchform" class="form u-search-form">
+				<div class="m_search menu-item-search">
+					<form name="searchform" class="menu-item-search form u-search-form">
 						<input type="text" class="input u-search-input" placeholder="<%- __('header.search') %>" />
 						<span class="icon icon-search"></span>
 					</form>

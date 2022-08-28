@@ -34,11 +34,20 @@ sidebar:
   time: 时间
 
 footer:
-  total: 总访问量
-  total_hit: 次
-  
-  visitors: 访客人数：
-  visitors_hit: 人次
+  moeicp: 萌ICP备%s号
+  furryicp: 兽ICP备%s号
+  total: 总访问量：%s 次
+  visitors: 访客人数：%s 人次
+  powered: 由 %s 强力驱动
+  hosted: 托管在
+  theme: 主题
   
 categories: 分类
 tags: 标签
+
+copyright:
+    author: "本文作者: "
+    link: "本文链接: "
+    license_title: "版权声明: "
+    left_license_content: "本博客所有文章除特别声明外,均采用 "
+    right_license_content: "许可协议。转载请注明出处!"

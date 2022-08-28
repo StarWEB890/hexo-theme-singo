@@ -47,12 +47,14 @@
     <script src="<%= theme.CDN.katex.js %>"></script>
     <script src="<%= theme.CDN.katex.rander %>"></script>
   <% } %>
+  <% if (theme.CDN.css){ %>
+  <link rel="stylesheet" href="<%= theme.CDN.css %>">
+  <% } else { %>
   <%- css('style.css') %>
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
+  <% } %>
+  <% if (theme.glass){ %>
+    <%- css('css/glass.css') %>
+  <% } %>
   <% if (theme.chatra.enable) { %>
   <!-- Chatra {literal} -->
 <script>
