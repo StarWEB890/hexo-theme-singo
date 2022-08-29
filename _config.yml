@@ -360,3 +360,6 @@ CDN:
     css: https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css
     js: https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js
     metingjs: https://unpkg.com/meting/dist/Meting.min.js
+
+  # Live2D（必须是绝对路径！）
+  live2d: https://cdn.bobo.now.cc/gh/stevenjoezhang/live2d-widget@latest/
