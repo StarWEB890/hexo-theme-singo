@@ -55,6 +55,21 @@
   <% if (theme.glass){ %>
     <%- css('css/glass.css') %>
   <% } %>
+  <% if (theme.headereffect.titlelight){ %>
+    <%- css('css/title-light.css') %>
+  <% } %>
+  <% if (theme.headereffect.menuhover){ %>
+    <%- css('css/header-light.css') %>
+  <% } %>
+  <% if (theme.readmore.light){ %>
+    <%- css('css/readmore-light.css') %>
+  <% } %>
+  <% if (theme.readmore.rotate){ %>
+    <%- css('css/readmore-rotate.css') %>
+  <% } %>
+  <% if (!theme.readmore.rotate && !theme.readmore.light){ %>
+    <%- css('css/readmore-default.css') %>
+  <% } %>
   <% if (theme.chatra.enable) { %>
   <!-- Chatra {literal} -->
 <script>

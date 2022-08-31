@@ -1,16 +1,10 @@
 # ========================================================================================
 # Body
 # ========================================================================================
+
 # 背景
 background: https://www.dmoe.cc/random.php
 
-# Canvas-Nest
-canvas:
-  enable: true
-  color: rgb(85,85,85)
-
-# 毛玻璃效果（可能会造成卡顿！）
-glass: false
 # ========================================================================================
 # Header
 # ========================================================================================
@@ -98,40 +92,52 @@ music:
 # Footer
 # ========================================================================================
 
-# 末尾添加：博客部署位置
+# 末尾滚动一言
+hitokoto: true
+
+# 每个选项对应的color可选：write、blue、green、purple、orange、red、pink、yellow
+color:
+  moeicp:
+  furryicp:
+  icpbeian:
+  gongan:
+  tongji:
+    pv:
+    uv:
+  powered:
+  hosted:
+  themesby:
+
+# 末尾博客部署位置
 hosted_by: 
   name: Vercel #部署在哪,例如Github Pages、Vercel、Coding等
   link: https://vercel.com/ #对应链接
 
-# 自定义末尾
-footer_right: "<a href=\"https://travellings.cn\" target=\"_blank\" class=\"menu-item-travelling\" rel=\"noopener\" title=\"开往-友链接力\">
-    <img src=\"https://travellings.cn/assets/logo.gif\" alt=\"开往-友链接力\" width=\"120\">
-</a>"
-
 # 萌ICP备案（不是真正的中国备案！）
 # 申请请到：https://icp.gov.moe/join.php
-# 然后把号码粘贴到这里即可（PS:“萌ICP备”不用加上去！）
+# 然后把号码粘贴到code即可（PS:“萌ICP备”不用加上去！）
 moeicp: 
+  code: 
 
 # 兽圈专属ICP备案系统（不是真正的中国备案！）（福瑞控狂喜 | doge）
 # 申请请到：https://www.furgov.cn/
-# 然后把号码粘贴到这里即可（PS:“兽ICP备”不用加上去！）
-furryicp:
+# 然后把号码粘贴到code即可（PS:“兽ICP备”不用加上去！） 
+furryicp: 
+  code: 
 
 # ICP备案（真正的中国备案）
-# 直接填 “XICP备xxxxxxxx号”（例如：“粤ICP备xxxxxxxx号-x”）
-# （前提是你的网站有经过ICP备案！！）
-icpbeian:
+icpbeian: 
+  name: #备案信息
 
 # 公安网备案
 gongan:
-  enable:
+  enable: 
   code:  #备案号
   type:  #显示备案信息
 
 # 不蒜子统计
 # https://busuanzi.ibruce.info
-busuanzi: true
+busuanzi: false
 
 # Visit-Stat统计
 # https://github.com/Lete114/Visit-Stat
@@ -140,6 +146,31 @@ busuanzi: true
 visit_stat:
   enable: false
   serverURL: 
+
+# 自定义末尾右侧栏
+footer_right: "<a href=\"https://travellings.cn\" target=\"_blank\" class=\"menu-item-travelling\" rel=\"noopener\" title=\"开往-友链接力\">
+    <img src=\"https://travellings.cn/assets/logo.gif\" alt=\"开往-友链接力\" width=\"120\">
+</a>"
+
+# ========================================================================================
+# 特效
+# ========================================================================================
+
+body:
+  canvas: # Canvas-Nest
+    enable: false
+    color: rgb(85,85,85)
+
+# 毛玻璃效果（可能会造成卡顿！）
+glass: false
+
+headereffect:
+  titlelight: true # 头部标题发光特效
+  menuhover: true # 头部菜单hover特效
+
+readmore:
+  light: true # “阅读更多”hover发光特效
+  rotate: true # “阅读更多”边框旋转特效
 
 # ========================================================================================
 # 友情链接

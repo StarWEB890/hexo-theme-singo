@@ -8,7 +8,7 @@
 				<ul class='h-list'>
 					<% (theme.menu||[]).forEach(function(value){ %>
 						<li class="menu-item-<%=value.name%>">
-							<a class='flat-box nav btn btn-primary btn-ghost btn-shine' href='<%=url_for(value.url)%>'>
+							<a class='flat-box nav <% if (theme.headereffect.menuhover) { %>btn btn-primary btn-ghost btn-shine<% } else { %>buttonoeffe<% } %>' href='<%=url_for(value.url)%>'>
 								<i class="<%=value.slug%>" aria-hidden="true"></i>&nbsp;
 								<%- __('header.' + value.name) %>
 							</a>

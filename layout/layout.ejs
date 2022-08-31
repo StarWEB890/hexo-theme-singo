@@ -14,8 +14,8 @@
   </div>
   <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
   <%- partial('_partial/scripts') %>
-  <% if (theme.canvas.enable) { %>
-  <script type="text/javascript" color="<%= theme.canvas.color %>" opacity="0.5" count="99" src="<%= theme.CDN.canvasnest %>"></script>
+  <% if (theme.body.canvas.enable) { %>
+  <script type="text/javascript" color="<%= theme.body.canvas.color %>" opacity="0.5" count="99" src="<%= theme.CDN.canvasnest %>"></script>
   <% } %>
 </body>
 </html>

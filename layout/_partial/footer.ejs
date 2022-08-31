@@ -1,3 +1,4 @@
+<% if (theme.hitokoto){ %>
 <div id="hitokoto" class="footermar">
   <p id="hitokoto_text" class="hitokoto">
     :D 获取中...
@@ -13,33 +14,35 @@
       .catch(console.error)
   </script>
 </div>
+<% } %>
 <footer id="footer" class="clearfix">
   <div class="footer-left">
-    Copyright &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>. All Rights Reserved.<br>
+    Copyright &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>. All Rights Reserved.
+    <br>
 
-    <% if (theme.moeicp){ %>
-      <a href="https://icp.gov.moe/?keyword=<%= theme.moeicp %>" target="_blank"><%- __('footer.moeicp',theme.moeicp) %></a><br>
+    <% if (theme.moeicp.code){ %>
+      <a href="https://icp.gov.moe/?keyword=<%= theme.moeicp.code %>" target="_blank" <% if (theme.color.moeicp){ %>class="footer-button button-<%= theme.color.moeicp %>"<% } %>><%- __('footer.moeicp',theme.moeicp.code) %></a><br>
     <% } %>
-    <% if (theme.furryicp){ %>
-      <a href="https://www.furgov.cn/index.html?query=<%= theme.furryicp %>" target="_blank"><%- __('footer.furryicp',theme.furryicp) %></a><br>
+    <% if (theme.furryicp.code){ %>
+      <a href="https://www.furgov.cn/index.html?query=<%= theme.furryicp.code %>" target="_blank" <% if (theme.color.furryicp){ %>class="footer-button button-<%= theme.color.furryicp %>"<% } %>><%- __('footer.furryicp',theme.furryicp.code) %></a><br>
     <% } %>
 
-    <% if (theme.icpbeian){ %>
-      <a href="https://beian.miit.gov.cn/" target="_blank"><%= theme.icpbeian %></a>
+    <% if (theme.icpbeian.name){ %>
+      <a href="https://beian.miit.gov.cn/" target="_blank" <% if (theme.color.icpbeian){ %>class="footer-button button-<%= theme.color.icpbeian %>"<% } %>><%= theme.icpbeian.name %></a>
       <br>
     <% } %>
 
     <% if (theme.gongan.enable){ %>
-      <a href="https://beian.miit.gov.cn/" target="_blank"><%= theme.icpbeian %></a>
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<%= theme.gongan.code %>" <% if (theme.color.gongan){ %>class="footer-button button-<%= theme.color.gongan %>"<% } %> target="_blank"><%= theme.gongan.type %></a>
       <br>
     <% } %>
 
     <% if (theme.busuanzi){ %>
       <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-      <span id="busuanzi_container_site_pv">
+      <span id="busuanzi_container_site_pv" <% if (theme.color.tongji.pv){ %>class="footer-button button-<%= theme.color.tongji.pv %>"<% } %>>
         <i class="fa fa-user"></i> <%- __('footer.total','<span id="busuanzi_value_site_pv"></span>&nbsp;') %>
     </span> |
-    <span id="busuanzi_container_site_uv">
+    <span id="busuanzi_container_site_uv" <% if (theme.color.tongji.uv){ %>class="footer-button button-<%= theme.color.tongji.uv %>"<% } %>>
       <i class="fa fa-eye"></i> <%- __('footer.visitors','<span id="busuanzi_value_site_uv"></span>&nbsp;') %>
     </span>
     <br>
@@ -91,21 +94,31 @@
 
 })();
       </script>
+      <% if (theme.color.tongji.pv){ %><div class="footer-button button-<%= theme.color.tongji.pv %>"><% } %>
         <i class="fa fa-user"></i> <%- __('footer.total','<span id="vs_site_pv">0</span>&nbsp;') %>
-         |
+        <% if (theme.color.tongji.pv){ %></div><% } %>
+      <% if (theme.color.tongji.uv){ %><div class="footer-button button-<%= theme.color.tongji.uv %>"><% } %>
       <i class="fa fa-eye"></i> <%- __('footer.visitors','<span id="vs_site_uv">0</span>&nbsp;') %>
+      <% if (theme.color.tongji.uv){ %></div><% } %>
     <br>
     <% } %>
-    <%- __('footer.powered','<a href="https://hexo.io">Hexo</a>') %>
+    <a href="https://hexo.io" <% if (theme.color.powered){ %>class="footer-button button-<%= theme.color.powered %>"<% } %>>
+    <%- __('footer.powered','Hexo') %>
+    </a>
     <% if (theme.hosted_by.name){ %>
-       | <%- __('footer.hosted') %> 
-       <% if (theme.hosted_by.link){ %>
+      <% if (!theme.color.hosted){ %> | <% } %>
+      <% if (theme.color.hosted){ %><div class="footer-button button-<%= theme.color.hosted %>"><% } %>
+      <% if (theme.hosted_by.link){ %>
         <a href="<%= theme.hosted_by.link %>">  
        <% } %>
+       <%- __('footer.hosted') %> 
        <%= theme.hosted_by.name %>
        <% if (theme.hosted_by.link){ %></a> <% } %>
+       <% if (theme.color.hosted){ %></div><% } %>
     <% } %>
-        | <%- __('footer.theme') %> <a href="https://github.com/StarWEB890/hexo-theme-singo">SinGO</a>
+    <% if (!theme.color.themesby){ %> | <% } %>
+  <a href="https://github.com/StarWEB890/hexo-theme-singo" <% if (theme.color.themesby){ %>class="footer-button button-<%= theme.color.themesby %>"<% } %>>
+       <%- __('footer.theme') %> SinGO</a>
     </div>
 
     

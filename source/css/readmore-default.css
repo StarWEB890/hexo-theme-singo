@@ -1,0 +1,20 @@
+.article .readmore .mores {
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    outline: transparent;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    transition: 0.25s;
+    border: 2px solid black;
+  }
+  .readmore .mores:hover {
+    background: black;
+    color:white;
+  }

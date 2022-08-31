@@ -17,7 +17,8 @@
 
     <% if (post.excerpt) { %>
 	  <div class="readmore">
-      <a href="<%- url_for(post.path) %>" class="mores mores-primary mores-ghost mores-shine light">
+      <a href="<%- url_for(post.path) %>" class="mores<% if (theme.readmore.light) { %> mores-primary mores-ghost mores-shine<% } %><% if (theme.readmore.rotate) { %> light<% } %>">
+        <% if (theme.readmore.rotate) { %>
         <div></div>
 
         <div></div>
@@ -25,6 +26,7 @@
         <div></div>
     
         <div></div>
+        <% } %>
         <%- __('article.readmore') %>
       </a>
     </div>
