@@ -280,8 +280,8 @@ shuoshuo:
   kkapi: # https://kkapi.js.org/
     serverURL:  # 部署kkapi地址（记住不是kkapi-open的地址！）
     author:  # 个人id
-    loadimg: https://cdn.staticaly.com/gh/StarWEB890/TuChuang@master/images/load.6i582rbr59s0.gif #加载动画
-    # kkapi评论使用Discuss，请在上面设置
+    loadimg: https://cdn.bobo.now.cc/gh/StarWEB890/TuChuang/images/load.6i582rbr59s0.gif #加载动画
+    comment: waline # 使用评论，目前仅支持：waline、twikoo、discuss（请在上面设置评论）
   daodao_swiper: # 教程：https://blog.xsnetw.cf/posts/25517/
     jssrc: https://cdn.staticaly.com/gh/StarWEB890/daodao/main/daodao.js #请将StarWEB890改为你Github的名字，或者你自定义链接
     url:  #你的vercel部署地址
