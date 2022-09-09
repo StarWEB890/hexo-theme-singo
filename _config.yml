@@ -3,7 +3,7 @@
 # ========================================================================================
 
 # 背景
-background: https://www.dmoe.cc/random.php
+background: https://www.loliapi.com/acg/
 
 # ========================================================================================
 # Header
@@ -110,8 +110,8 @@ color:
 
 # 末尾博客部署位置
 hosted_by: 
-  name: Vercel #部署在哪,例如Github Pages、Vercel、Coding等
-  link: https://vercel.com/ #对应链接
+  name:  #部署在哪,例如Github Pages、Vercel、Coding等
+  link:  #对应链接
 
 # 萌ICP备案（不是真正的中国备案！）
 # 申请请到：https://icp.gov.moe/join.php
@@ -206,7 +206,7 @@ xiaohuoban:
 
 # 评论功能
 comment:
-  enable: true # 开启评论功能
+  enable: false # 开启评论功能
   type: waline # 选择评论：discuss | twikoo | gitalk | waline | giscus
   discuss: # Discuss设置：https://discuss.js.org
     server_url:  #评论服务端地址
