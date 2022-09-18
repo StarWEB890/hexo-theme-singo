@@ -1,5 +1,5 @@
 <% if (site.tags.length){ %>
-<div class="m_widget tagcloud">
+<div class="m_widget tagcloud animate__animated <%= theme.animate.sidebar %>">
     <div class="header"><i class="fa fa-tags" aria-hidden="true"></i><%- __('sidebar.tagcloud') %></div>
     <div class='content'>
         <%- tagcloud(site.tags, {

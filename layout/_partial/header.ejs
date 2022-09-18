@@ -1,4 +1,4 @@
-<header class="l_header">
+<header class="l_header animate__animated <%= theme.animate.header %>">
 	<div class='wrapper'>
 		<div class="nav-main container container--flex">
 			<a class="logo flat-box" href='<%= url_for("/") %>' >
@@ -7,7 +7,7 @@
 			<div class='menu'>
 				<ul class='h-list'>
 					<% (theme.menu||[]).forEach(function(value){ %>
-						<li class="menu-item-<%=value.name%>">
+						<li class="menu-item-<%=value.name%> animate__animated <%= theme.animate.header %>" style="animation-duration: 1.5s">
 							<a class='flat-box nav <% if (theme.headereffect.menuhover) { %>btn btn-primary btn-ghost btn-shine<% } else { %>buttonoeffe<% } %>' href='<%=url_for(value.url)%>'>
 								<i class="<%=value.slug%>" aria-hidden="true"></i>&nbsp;
 								<%- __('header.' + value.name) %>
@@ -17,7 +17,7 @@
 				</ul>
 			</div>
 			<% if (theme.search.enable === true) { %>
-				<div class="m_search menu-item-search">
+				<div class="m_search menu-item-search animate__animated <%= theme.animate.header %>"style="animation-duration: 2s">
 					<form name="searchform" class="menu-item-search form u-search-form">
 						<input type="text" class="input u-search-input" placeholder="<%- __('header.search') %>" />
 						<span class="icon icon-search"></span>
@@ -26,9 +26,9 @@
 			<% } %>
 			<ul class='switcher h-list'>
 				<% if (theme.search.enable === true) { %>
-					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+					<li class='s-search animate__animated <%= theme.animate.header %>' style="animation-duration: 1.5s"><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
 				<% } %>
-				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+				<li class='s-menu animate__animated <%= theme.animate.header %>' style="animation-duration: 2s"><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
 			</ul>
 		</div>
 		

@@ -1,9 +1,10 @@
 <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script data-pjax src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
 <script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
 <% if (theme.CDN.js.jqueryfitvids){ %>
-  <script src="<%= theme.CDN.js.jqueryfitvids %>"></script>
+  <script data-pjax src="<%= theme.CDN.js.jqueryfitvids %>"></script>
   <% } else { %>
-    <%- js('js/jquery.fitvids.js') %>
+    <script data-pjax src="/js/jquery.fitvids.js"></script>
   <% } %>
 <script>
 	var GOOGLE_CUSTOM_SEARCH_API_KEY = "<%- theme.search.google_api_key %>";
@@ -20,14 +21,14 @@
   if(!ROOT.endsWith('/'))ROOT += '/';
 </script>
 <% if (theme.CDN.js.search){ %>
-  <script src="<%= theme.CDN.js.search %>"></script>
+  <script data-pjax src="<%= theme.CDN.js.search %>"></script>
   <% } else { %>
-    <%- js('js/search.js') %>
+    <script data-pjax src="/js/search.js"></script>
   <% } %>
   <% if (theme.CDN.js.app){ %>
-    <script src="<%= theme.CDN.js.app %>"></script>
+    <script data-pjax src="<%= theme.CDN.js.app %>"></script>
     <% } else { %>
-      <%- js('js/app.js') %>
+      <script data-pjax src="/js/app.js"></script>
     <% } %>
     <% if (theme.live2d.enable){ %>
       <%- partial('_thirdparty/live2d') %>
