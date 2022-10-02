@@ -3,7 +3,7 @@
 # ========================================================================================
 
 # 背景
-background: https://www.loliapi.com/acg/
+background: https://api.ayao.ltd/images/api.php
 
 # ========================================================================================
 # Header
@@ -160,7 +160,11 @@ body:
     color: rgb(85,85,85)
 
 # 毛玻璃效果（可能会造成卡顿！）
-glass: false
+glass: 
+  header: false
+  article: false
+  sidebar: false
+  footer: false
 
 headereffect:
   titlelight: true # 头部标题发光特效
@@ -177,7 +181,7 @@ readmore:
 # 友情链接配置：
 # 编辑博客根目录下的“_config.yml”，设置“title”（博客名）、“description”（博客描述）、“url”（博客网址）
 # 再编辑linkavatar（PS：必须是https开头！）
-linkavatar: https://cdn.xsnetw.cf/SinGo/images/avatar.jpg
+linkavatar: ""
 dalao:
   - name: 名称（如SinGO博客）
     link: 链接（如：https://www.xsnetw.cf）
@@ -358,9 +362,9 @@ CDN:
 
   # katex
   katex:
-    css: https://cdn.bobo.now.cc/npm/katex/dist/katex.min.css
-    js: https://cdn.bobo.now.cc/npm/katex/dist/katex.min.js
-    rander: https://cdn.bobo.now.cc/npm/katex/dist/contrib/auto-render.min.js
+    css: https://jsdelivr.bobosh.ml/npm/katex/dist/katex.min.css
+    js: https://jsdelivr.bobosh.ml/npm/katex/dist/katex.min.js
+    rander: https://jsdelivr.bobosh.ml/npm/katex/dist/contrib/auto-render.min.js
 
   # 说说
   shuoshuo:
@@ -373,7 +377,7 @@ CDN:
         css: https://cdn.staticfile.org/highlight.js/10.6.0/styles/atom-one-dark.min.css
         js: https://cdn.staticfile.org/highlight.js/10.6.0/highlight.min.js
     daodao:
-      css: https://cdn.bobo.now.cc/gh/StarWEB890/TuChuang/npm/daodao/main.css
+      css: https://jsdelivr.bobosh.ml/gh/StarWEB890/TuChuang/npm/daodao/main.css
       swiper:
         css: https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.css
         js: https://cdn.bootcdn.net/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js
@@ -398,4 +402,4 @@ CDN:
     metingjs: https://unpkg.com/meting/dist/Meting.min.js
 
   # Live2D（必须是绝对路径！）
-  live2d: https://cdn.bobo.now.cc/gh/stevenjoezhang/live2d-widget@latest/
+  live2d: https://jsdelivr.bobosh.ml/gh/stevenjoezhang/live2d-widget@latest/

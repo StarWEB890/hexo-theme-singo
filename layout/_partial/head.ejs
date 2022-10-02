@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= config.language %>">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,7 +24,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <%- favicon_tag(config.favicon) %>
   <%- feed_tag(config.feed.path, {title: config.title}) %>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <!--网站收录-->
   <% if (theme.site_verify.baidu){ %>
     <meta name="baidu-site-verification" content="<%= theme.site_verify.baidu %>" />
@@ -59,10 +59,36 @@
   <% } else { %>
   <%- css('style.css') %>
   <% } %>
-  <!--特效-->
-  <% if (theme.glass){ %>
-    <%- css('css/glass.css') %>
+  <!--毛玻璃-->
+  <% if (theme.glass.header){ %>
+    <style>
+      .l_header{
+      backdrop-filter: blur(20px);
+      }
+    </style>
   <% } %>
+  <% if (theme.glass.article){ %>
+    <style>
+      .l_main .post,.post-comments,.m_widget,#footer {
+      backdrop-filter: blur(20px);
+      }
+    </style>
+  <% } %>
+  <% if (theme.glass.sidebar){ %>
+    <style>
+      .m_widget {
+      backdrop-filter: blur(20px);
+      }
+    </style>
+  <% } %>
+  <% if (theme.glass.footer){ %>
+    <style>
+      #footer {
+      backdrop-filter: blur(20px);
+      }
+    </style>
+  <% } %>
+  <!--其它特效-->
   <% if (theme.headereffect.titlelight){ %>
     <%- css('css/title-light.css') %>
   <% } %>

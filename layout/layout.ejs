@@ -1,10 +1,24 @@
 <%- partial('_partial/head') %>
-<body style="background-image: url(<%= theme.background %>); 
-	  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
-  background-attachment: fixed;
-  -webkit-background-attachment: fixed;">
+<style>
+  body:before {
+    content: '';
+			display: block;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -2;
+background:url('<%= theme.background %>');
+background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: 1;
+			transition: opacity .5s ease;
+      background-size:100% 100%;
+  }
+</style>
+<body>
   <%- partial('_partial/loading') %>
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
   <div class="l_body">
