@@ -3,7 +3,7 @@
 # ========================================================================================
 
 # 背景
-background: https://api.ayao.ltd/images/api.php
+background: https://acgapi.bobocdn.tk/api.php
 
 # ========================================================================================
 # Header
@@ -43,11 +43,10 @@ menu:
 # ========================================================================================
 
 # 侧边栏
-# 建议：about（关于）、links（社交链接，请在下面social配置）、categories（分类）、tagcloud（标签页）
+# 建议：about（关于）、categories（分类）、tagcloud（标签页）
 # 可选：qweather（侧边天气）、music（侧边音乐播放器）
 widgets:
   - about
-  - links
   - categories
   - tagcloud
   - weather
@@ -58,18 +57,19 @@ avatar: https://cravatar.cn/avatar/4193da6ee225ac3a05b7adddff9d9ce2?s=1000
 
 # 侧边栏社交链接
 social:
-- name: Github
-  slug: fa-brands fa-github
+- slug: fa-brands fa-github
   url: https://github.com/StarWEB890
-- name: Bilibili
-  slug: fa-brands fa-bilibili
+- slug: fa-brands fa-bilibili
 	url: https://space.bilibili.com/479627766
-- name: Email
-  slug: fa-solid fa-envelope
+- slug: fa-solid fa-star
+	url: https://669506721.qzone.qq.com
+- slug: fa-solid fa-envelope
 	url: mailto:starinno@xsnetw.cf
-- name: RSS
-  slug: fa-solid fa-square-rss
+- slug: fa-solid fa-rss
 	url: /atom.xml
+
+# 侧边公告
+notice: 
 
 # 侧边音乐播放器
 # 使用APlayer+MetingJS
@@ -264,6 +264,9 @@ comment:
 less:
   compress: true
 
+# QRCode（文章二维码扫描手机看）
+qrcode: false
+
 # Pjax
 pjax: true
 
@@ -282,7 +285,7 @@ shuoshuo:
   kkapi: # https://kkapi.js.org/
     serverURL:  # 部署kkapi地址（记住不是kkapi-open的地址！）
     author:  # 个人id
-    loadimg: https://cdn.bobo.now.cc/gh/StarWEB890/TuChuang/images/load.6i582rbr59s0.gif #加载动画
+    loadimg: https://jsdelivr.bobosh.ml/gh/StarWEB890/TuChuang/images/load.6i582rbr59s0.gif #加载动画
     comment: waline # 使用评论，目前仅支持：waline、twikoo、discuss（请在上面设置评论）
   daodao_swiper: # 教程：https://blog.xsnetw.cf/posts/25517/
     jssrc: https://cdn.staticaly.com/gh/StarWEB890/daodao/main/daodao.js #请将StarWEB890改为你Github的名字，或者你自定义链接
@@ -357,6 +360,9 @@ CDN:
   # fontawesome
   fontawesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css
 
+  # iconfont
+  iconfont: //at.alicdn.com/t/c/font_3686617_pfub0nay53j.css
+
   # animate.css
   animate: https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.css
 
@@ -368,7 +374,7 @@ CDN:
 
   # 说说
   shuoshuo:
-    artitalk: https://unpkg.com/artitalk
+    artitalk: https://artitalk.bobocdn.tk/artitalk.js
     kkapi:
       css: https://cdn1.tianli0.top/npm/ispeak/style.css
       js: https://cdn1.tianli0.top/npm/ispeak/ispeak.umd.js

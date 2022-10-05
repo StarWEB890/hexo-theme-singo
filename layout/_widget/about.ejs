@@ -6,16 +6,37 @@
 width: 250px;
 height: 250px;
 font-size: 22px;
-padding-top: 205px;
+padding-top: 185px;
 overflow: hidden;
 background: no-repeat center top / 100% 100%;
 background-image: linear-gradient(to top, #FFFFFF, transparent), url("<%= url_for(theme.avatar) %>");
 border-radius: 12px 12px 0 0;
         }
 </style>
-<div class="image avatar waves-image site-author"><div class='header'><i class="fa fa-user" aria-hidden="true"></i><%=config.author %></div></div>
+<div class="image avatar waves-image site-author"><div class='header'>
+    <p><i class="fa fa-user" aria-hidden="true"></i>
+    <%=config.author %>
+    </p>
+    <p style="font-size:5px;margin: -6px 0px 0 -9px;">
+    <%= config.subtitle%>
+    </p>
+</div></div>
 <%} %>
 <div class='content'>
-<div class='desc'><%= config.subtitle%></div>
-</div>
+    <% if(theme.social) { %>
+    <div class='desc'>社交链接</div>
+    <div class='social'>
+    <% (theme.social||[]).forEach(function(item){ %>
+        <a target="_blank" href="<%= url_for(item.url) %>">
+            <i class="<%= item.slug %>" aria-hidden="true"></i>
+        </a>
+    <% }); %>
+    </div>
+    <%} %>
+    <% if(theme.notice) { %>
+        <div class='desc-notice'>公告</div>
+        <div class='social'>
+            <%= theme.notice%>
+        </div>
+        <%} %>
 </section>
