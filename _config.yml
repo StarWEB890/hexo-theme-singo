@@ -209,7 +209,7 @@ xiaohuoban:
 # 评论功能
 comment:
   enable: false # 开启评论功能
-  type: waline # 选择评论：discuss | twikoo | gitalk | waline | giscus
+  type: waline # 选择评论：discuss | twikoo | gitalk | waline | giscus | disqusjs
   discuss: # Discuss设置：https://discuss.js.org
     server_url:  #评论服务端地址
     lang: cn #用于手动设定评论区语言，支持的语言列表 https://discuss.js.org/Quick-Start.html#lang
@@ -218,6 +218,16 @@ comment:
     envId:  # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
     region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
     lang: zh-CN #用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/js/utils/i18n/index.js
+  disqusjs:
+    shortname: 
+    siteName: 
+    identifier: 
+    url: 
+    title: 
+    api: 
+    apikey: 
+    admin: 
+    adminLabel:
   gitalk: # Gitalk设置：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
     clientID:
     clientSecret:
@@ -230,6 +240,7 @@ comment:
     language: navigator.language || navigator.userLanguage
     labels: ['Gitalk']
     perPage: 10
+    proxy: 
   giscus: # Giscus设置：https://giscus.app/zh-CN
     repo: ''
     repo_id: ''
@@ -264,7 +275,7 @@ comment:
 less:
   compress: true
 
-# QRCode（文章二维码扫描手机看）
+# QRCode （薛定谔的二维码）
 qrcode: false
 
 # Pjax
@@ -286,7 +297,7 @@ shuoshuo:
     serverURL:  # 部署kkapi地址（记住不是kkapi-open的地址！）
     author:  # 个人id
     loadimg: https://jsdelivr.bobosh.ml/gh/StarWEB890/TuChuang/images/load.6i582rbr59s0.gif #加载动画
-    comment: waline # 使用评论，目前仅支持：waline、twikoo、discuss（请在上面设置评论）
+    comment: waline # 使用评论，目前仅支持：waline、twikoo、discuss、disqusjs（请在上面设置评论）
   daodao_swiper: # 教程：https://blog.xsnetw.cf/posts/25517/
     jssrc: https://cdn.staticaly.com/gh/StarWEB890/daodao/main/daodao.js #请将StarWEB890改为你Github的名字，或者你自定义链接
     url:  #你的vercel部署地址
@@ -400,7 +411,10 @@ CDN:
       css: https://unpkg.com/gitalk@latest/dist/gitalk.css
       js: https://unpkg.com/gitalk@latest/dist/gitalk.min.js
       md5: https://priesttomb.github.io/js/md5.min.js
-  
+    disqusjs:
+      css: https://cdn.bootcdn.net/ajax/libs/disqusjs/3.0.2/styles/disqusjs.min.css
+      js: https://cdn.bootcdn.net/ajax/libs/disqusjs/3.0.2/disqusjs.es2015.umd.min.js
+
   # 音乐
   aplayer:
     css: https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css

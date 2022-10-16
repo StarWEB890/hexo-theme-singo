@@ -14,7 +14,8 @@
         distractionFreeMode: <%= theme.comment.gitalk.distractionFreeMode %>,
         language: '<%= theme.comment.gitalk.language %>',
         labels: <%- JSON.stringify(theme.comment.gitalk.labels || []) %>,
-        perPage: <%= theme.comment.gitalk.perPage || 10 %>
+        perPage: <%= theme.comment.gitalk.perPage || 10 %>,
+        proxy: '<%= theme.comment.gitalk.proxy %>'
       })
       gitalk.render('gitalk-container')
     </script>

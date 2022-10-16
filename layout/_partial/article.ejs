@@ -30,41 +30,7 @@
 			<!---->
 			<div class="qrcodes">
 				<% if (theme.qrcode && post.prev || post.next){ %>
-	<!--此处生成本页二维码-->
-<script data-pjax src="//cdn.bootcss.com/jquery/1.8.2/jquery.min.js"></script>
-<script data-pjax src="//cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-<div id="output" style="width:150px; height:170px;border:10px solid #bde4e4;background:#ffffff; font-weight: 600; text-align: center; color: rgba(0, 0, 0, 0.9);margin: 10px auto 0;">扫一扫手机看</div>
-<script data-pjax type="text/javascript">
-   function utf16to8(str) {
-     var out, i, len, c;
-     out = "";
-     len = str.length;
-     for (i = 0; i < len; i++) {
-         c = str.charCodeAt(i);
-         if ((c >= 0x0001) && (c <= 0x007F)) {
-             out += str.charAt(i);
-         } else if (c > 0x07FF) {
-             out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
-             out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
-             out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
-         } else {
-             out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
-             out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
-         }
-     }
-     return out;
- }
- 
- content = utf16to8('<%- config.url %>/<%- post.path %>'); 
- $('#output').qrcode({
-     width: 110,
-     height: 110,
-     render: "canvas",
-     correctLevel: 0,
-     text: content
- });
- </script>
- <!--生成本页二维码结束-->
+	<!--原本这里是生成本页二维码的，但出bug了所以我把它给削了-->
  <% } %>
 </div>
 	<% if(post.prev || post.next){ %>

@@ -1,0 +1,48 @@
+<script src="<%= theme.CDN.comment.twikoo %>"></script>
+<style>
+  .tk-footer{
+    display: none;
+  }
+</style>
+<script>
+    function load_ispeak() {
+        setTimeout(function() {
+            var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+            var src = '<%= theme.CDN.shuoshuo.kkapi.js %>'
+            var script = document.createElement('script')
+            script.setAttribute('type','text/javascript')
+            script.onload = function() {
+               pjax_ispeak()
+            }
+            script.setAttribute('src', src)
+            HEAD.appendChild(script)
+        }, 1);
+    };
+    function pjax_ispeak() {
+        if(!document.querySelectorAll("#ispeak")[0])return;
+        ispeak
+          .init({
+            el: '#ispeak',
+            api: '<%= theme.shuoshuo.kkapi.serverURL %>',
+            author: '<%= theme.shuoshuo.kkapi.author %>',
+            pageSize: 10,
+            loading_img: '<%= theme.shuoshuo.kkapi.loadimg %>',
+            comment: function (speak) {
+              // 4.4.0 之后在此回调函数中初始化评论
+              const { _id, title, content } = speak
+              const contentSub = content.substring(0, 30)
+              twikoo.init({
+            envId: '<%= theme.comment.twikoo.envId %>', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+    el: '.ispeak-comment', // 容器元素
+    region: '<%= theme.comment.twikoo.region %>', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+    path: location.pathname, 
+    lang: '<%= theme.comment.twikoo.lang %>',
+          });
+            }
+          });
+    }
+    load_ispeak();
+    document.addEventListener('pjax:complete', function () {
+        pjax_ispeak();
+    });
+    </script>

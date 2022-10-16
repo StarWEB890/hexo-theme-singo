@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="<%- theme.CDN.comment.disqusjs.css %>" />
+<script src="<%- theme.CDN.comment.disqusjs.js %>"></script>
+<style>
+  .wl-power{
+    display: none;
+  }
+  .wl-emoji-popup{
+    max-width: 100%;
+}
+.wl-emoji-popup .wl-tabs {
+    height: 40px;
+}
+.at {
+    border-bottom: none;
+  }
+  .wl-action[title="表情包"]{
+    display: none;
+  }
+</style>
+<script>
+    function load_ispeak() {
+        setTimeout(function() {
+            var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+            var src = '<%= theme.CDN.shuoshuo.kkapi.js %>'
+            var script = document.createElement('script')
+            script.setAttribute('type','text/javascript')
+            script.onload = function() {
+               pjax_ispeak()
+            }
+            script.setAttribute('src', src)
+            HEAD.appendChild(script)
+        }, 1);
+    };
+    function pjax_ispeak() {
+        if(!document.querySelectorAll("#ispeak")[0])return;
+        ispeak
+          .init({
+            el: '#ispeak',
+            api: '<%= theme.shuoshuo.kkapi.serverURL %>',
+            author: '<%= theme.shuoshuo.kkapi.author %>',
+            pageSize: 10,
+            loading_img: '<%= theme.shuoshuo.kkapi.loadimg %>',
+            comment: function (speak) {
+              // 4.4.0 之后在此回调函数中初始化评论
+              const { _id, title, content } = speak
+              const contentSub = content.substring(0, 30)
+               disqusjs = new DisqusJS(Object.assign(<%- JSON.stringify(theme.comment.disqusjs) %>));
+  // 渲染新的 DisqusJS
+  disqusjs.render('.ispeak-comment');
+            }
+          });
+    }
+    load_ispeak();
+    document.addEventListener('pjax:complete', function () {
+        pjax_ispeak();
+    });
+    </script>

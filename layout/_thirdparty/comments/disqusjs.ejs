@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="<%- theme.CDN.comment.disqusjs.css %>" />
+<script src="<%- theme.CDN.comment.disqusjs.js %>"></script>
+<div id="disqusjs"></div>
+  <script>
+let disqusjs = null;
+// 初始化 DisqusJS 实例
+disqusjs = new DisqusJS({
+  // ...
+});
+// 将 DisqusJS 渲染到页面上
+disqusjs.render(document.getElementById('disqusjs'));
+
+document.addEventListener('pjax:send', () => {
+  // 销毁 DisqusJS 实例
+  disqusjs.destroy();
+});
+
+document.addEventListener('pjax:complete', () => {
+  // 使用新的参数（如新的 identifier 和 url）创建全新的 DisqusJS 实例
+  disqusjs = new DisqusJS(Object.assign(<%- JSON.stringify(theme.comment.disqusjs) %>));
+  // 渲染新的 DisqusJS
+  disqusjs.render(document.getElementById('disqusjs'));
+});
+  </script> 
